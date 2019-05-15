@@ -1,21 +1,200 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Paulo Freitas</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paulo Sergio de Freitas Junior</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+body {
+  background-color: rgba(40, 40, 40, 1);
+  color: rgba(250, 250, 250, 1);
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+}
+.perfil {
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 250px;
+  margin: 30px auto 15px;
+  position: relative;
+  width: 250px;
+}
+.perfil img {
+  border-radius: 50%;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+h2 {
+	color: rgba(252, 109, 38, 1);
+  cursor: default;
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+	margin: 0 0 60px;
+	position: relative;
+	text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+h2::after {
+	background: rgba(250, 250, 250, 1);
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8) inset;
+	bottom: -12px;
+	content: "";
+	height: 7px;
+	left: 0;
+	margin: 0 auto;
+	position: absolute;
+  right: 0;
+  width: 70%;
+}
+.col-center {
+	float: none !important;
+	margin: 0 auto;
+}
+.carousel {
+  height: 200px;
+	margin: 30px auto 50px;
+  padding: 0 40px;
+  width: 100%;
+}
+.carousel .item {
+	color: rgba(250, 250, 250, 1);
+	font-size: 14px;
+  min-height: 290px;
+	overflow: hidden;
+  padding-top: 20px;
+  text-align: center;
+}
+.carousel .item .img-box {
+  background-color: rgba(250, 250, 250, 1);
+	border: 1px solid rgba(250, 250, 250, 1);
+	border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
+	height: 120px;
+	margin: 0 auto;
+	padding: 5px;
+	width: 120px;
+}
+.carousel .item a {
+  color: rgba(250, 250, 250, 1);
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.carousel .img-box img {
+	border-radius: 50%;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+.carousel .overview {
+  font-size: 18px;
+  font-style: bold;
+  padding-top: 15px;
+}
+.carousel .overview b {
+	text-transform: uppercase;
+	color: rgba(252, 109, 38, 1);
+}
+.carousel .carousel-control {
+	background: none;
+  height: 20px;
+  top: 50%;
+	width: 20px;
+}
+.carousel-control i {
+	color: rgba(250, 250, 250, 1);
+  display: inline-block;
+  font-size: 55px;
+	line-height: 40px;
+  position: absolute;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.carousel-control i.fa-angle-right {
+  right: 10px;
+}
+.carousel .carousel-indicators {
+	bottom: -40px;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+	border-radius: 50%;
+  height: 11px;
+	margin: 1px 3px;
+	width: 11px;
+}
+.carousel-indicators li {	
+	background-color: rgba(250, 250, 250, 1);
+	border-color: transparent;
+	box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.8);
+}
+.carousel-indicators li.active {	
+	background: rgba(252, 109, 38, 1);
+	box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.8);
+}
+</style>
 </head>
 <body>
-  <div class="col-12">
-    <div class="col-12 col-m-06 offset-auto">
-      <h1>Olá, estamos em contrução por aqui...</h1>
-      <h3>Caso queira, acesse meu repositório...</h3>
-    </div>
-    <div class="col-12 col-s-08 col-m-06 col-l-04 col-e-02 offset-auto">
-      <a href="https://gitlab.com/paulosfjunior"><img src="./image/gitlab.png" alt="GitLab"></a>
-    </div>
-  </div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 col-center m-auto">
+      <div class="perfil"><img src="./image/perfil.jpg" alt=""></div>
+      <h2>Paulo Sergio de Freitas Junior</h2>
+			<div id="Carousel" class="carousel slide" data-ride="carousel">
+				<!-- Carousel indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#Carousel" data-slide-to="0" class="active"></li>
+					<li data-target="#Carousel" data-slide-to="1"></li>
+          <li data-target="#Carousel" data-slide-to="2"></li>
+          <li data-target="#Carousel" data-slide-to="3"></li>
+				</ol>   
+				<!-- Wrapper for carousel items -->
+				<div class="carousel-inner">
+					<div class="item carousel-item active">
+            <a href="https://gitlab.com/paulosfjunior" target="_blank">
+              <div class="img-box"><img src="./image/gitlab.png" alt=""></div>
+              <p class="overview"><b>GitLab</b> @paulosfjunior</p>
+            </a>
+					</div>
+					<div class="item carousel-item">
+            <a href="https://github.com/paulosfjunior" target="_blank">
+              <div class="img-box"><img src="./image/github.png" alt=""></div>
+              <p class="overview"><b>GitHub</b> @paulosfjunior</p>
+            </a>
+					</div>
+					<div class="item carousel-item">
+            <a href="https://www.linkedin.com/in/paulosfjunior/" target="_blank">
+              <div class="img-box"><img src="./image/linkedin.png" alt=""></div>
+              <p class="overview"><b>Linkedin</b> paulosfjunior</p>
+            </a>
+          </div>
+					<div class="item carousel-item">
+            <a href="mailto:paulosfjunior@hotmail.com">
+              <div class="img-box"><img src="./image/email.png" alt=""></div>
+              <p class="overview"><b>Email</b> paulosfjunior@hotmail.com</p>
+            </a>
+          </div>
+				</div>
+				<!-- Carousel controls -->
+				<a class="carousel-control left carousel-control-prev" href="#Carousel" data-slide="prev">
+					<i class="fa fa-angle-left"></i>
+				</a>
+				<a class="carousel-control right carousel-control-next" href="#Carousel" data-slide="next">
+					<i class="fa fa-angle-right"></i>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
-</html>
+</html>                                		                            
