@@ -1,1 +1,5 @@
-theme: jekyll-theme-cayman
+title: Paulo Freitas
+description: Software Developer & DevOps
+url: https://paulosfjunior.github.io
+exclude:
+  - README.md
