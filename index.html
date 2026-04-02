@@ -26,10 +26,19 @@
           <span></span><span></span><span></span>
         </button>
         <ul class="nav__menu" id="navMenu">
-          <li><a href="#about" class="nav__link">Sobre</a></li>
-          <li><a href="#skills" class="nav__link">Skills</a></li>
-          <li><a href="#projects" class="nav__link">Projetos</a></li>
-          <li><a href="#contact" class="nav__link">Contato</a></li>
+          <li><a href="#about" class="nav__link" data-i18n="nav.about">Sobre</a></li>
+          <li><a href="#skills" class="nav__link" data-i18n="nav.skills">Skills</a></li>
+          <li><a href="#projects" class="nav__link" data-i18n="nav.projects">Projetos</a></li>
+          <li><a href="#contact" class="nav__link" data-i18n="nav.contact">Contato</a></li>
+          <button class="lang-toggle" id="langToggle" onclick="toggleLang()" aria-label="Mudar idioma">
+            <svg class="lang-toggle__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"></circle>
+              <path d="M3 12h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+              <path d="M12 3c2.8 2.4 4.5 5.6 4.5 9s-1.7 6.6-4.5 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+              <path d="M12 3c-2.8 2.4-4.5 5.6-4.5 9s1.7 6.6 4.5 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+            </svg>
+            <span class="lang-toggle__text">PT</span>
+          </button>
         </ul>
       </nav>
     </header>
@@ -38,23 +47,23 @@
     <section class="hero" id="hero">
       <div class="container hero__content">
         <div class="hero__text">
-          <p class="hero__greeting">Olá, eu sou</p>
+          <p class="hero__greeting" data-i18n="hero.greeting">Olá, eu sou</p>
           <h1 class="hero__name">Paulo Freitas</h1>
-          <p class="hero__role">Software Developer & DevOps</p>
+          <p class="hero__role" data-i18n="hero.role">Software Developer & DevOps</p>
           <p class="hero__description">
-            Desenvolvedor de software apaixonado por DevOps e ferramentas open
-            source. Criador do
+            <span data-i18n="hero.description">Desenvolvedor de software apaixonado por DevOps e ferramentas open
+            source. Criador do</span>
             <strong
               ><a href="https://tooark.com/" target="_blank" rel="noopener"
                 >Tooark</a
               ></strong
             >
-            — um ecossistema de bibliotecas e ferramentas para desenvolvedores e
-            DevOps.
+            <span data-i18n="hero.description.tooark">— um ecossistema de bibliotecas e ferramentas para desenvolvedores e
+            DevOps.</span>
           </p>
           <div class="hero__actions">
-            <a href="#projects" class="btn btn--primary">Ver Projetos</a>
-            <a href="#contact" class="btn btn--outline">Contato</a>
+            <a href="#projects" class="btn btn--primary" data-i18n="hero.btn.projects">Ver Projetos</a>
+            <a href="#contact" class="btn btn--outline" data-i18n="hero.btn.contact">Contato</a>
           </div>
         </div>
         <div class="hero__image">
@@ -72,41 +81,44 @@
     <!-- About -->
     <section class="section" id="about">
       <div class="container">
-        <h2 class="section__title">Sobre mim</h2>
+        <h2 class="section__title" data-i18n="about.title">Sobre mim</h2>
         <div class="about__content">
           <p>
-            Sou desenvolvedor de software com experiência em
+            <span data-i18n="about.p1.start">Sou desenvolvedor de software com experiência em</span>
             <strong>.NET/C#</strong>, <strong>Terraform</strong>,
-            <strong>TypeScript</strong>, <strong>Node.js</strong> e práticas de
-            <strong>DevOps</strong>. Trabalho no <strong>Grupo Jacto</strong> em
-            Pompeia, SP — Brasil.
+            <strong>TypeScript</strong>, <strong>Node.js</strong>
+            <span data-i18n="about.p1.mid">e práticas de</span>
+            <strong>DevOps</strong>.
+            <span data-i18n="about.p1.end">Trabalho no</span> <strong>Grupo Jacto</strong>
+            <span data-i18n="about.p1.location">em Pompeia, SP — Brasil.</span>
           </p>
           <p>
-            Fundei o projeto
+            <span data-i18n="about.p2.start">Fundei o projeto</span>
             <strong
               ><a href="https://tooark.com/" target="_blank" rel="noopener"
                 >Tooark</a
               ></strong
-            >, onde mantenho bibliotecas open source, GitHub Actions, templates
-            de CI/CD e ferramentas de observabilidade que já acumulam mais de
-            <strong><span id="about-downloads">0</span> downloads</strong> nos pacotes NuGet.
+            ><span data-i18n="about.p2.mid">, onde mantenho bibliotecas open source, GitHub Actions, templates
+            de CI/CD e ferramentas de observabilidade que já acumulam mais de</span>
+            <strong><span id="about-downloads">0</span> <span data-i18n="about.p2.end">downloads</span></strong>
+            <span data-i18n="about.p2.suffix">nos pacotes NuGet.</span>
           </p>
           <div class="about__stats">
             <div class="stat">
               <span class="stat__number" id="stat-repos">--</span>
-              <span class="stat__label">Repositórios</span>
+              <span class="stat__label" data-i18n="stat.repos">Repositórios</span>
             </div>
             <div class="stat">
               <span class="stat__number" id="stat-downloads">--</span>
-              <span class="stat__label">Downloads NuGet</span>
+              <span class="stat__label" data-i18n="stat.downloads">Downloads NuGet</span>
             </div>
             <div class="stat">
               <span class="stat__number" id="stat-packages">--</span>
-              <span class="stat__label">Pacotes .NET</span>
+              <span class="stat__label" data-i18n="stat.packages">Pacotes .NET</span>
             </div>
             <div class="stat">
               <span class="stat__number" id="stat-tooark-repos">--</span>
-              <span class="stat__label">Repos Tooark</span>
+              <span class="stat__label" data-i18n="stat.tooark">Repos Tooark</span>
             </div>
           </div>
         </div>
@@ -116,7 +128,7 @@
     <!-- Skills -->
     <section class="section section--alt" id="skills">
       <div class="container">
-        <h2 class="section__title">Skills & Tecnologias</h2>
+        <h2 class="section__title" data-i18n="skills.title">Skills & Tecnologias</h2>
         <div class="skills__grid">
           <div class="skill-card">
             <img
@@ -126,7 +138,7 @@
               aria-hidden="true"
             />
             <div class="skill-card__content">
-              <h3 class="skill-card__title">Backend</h3>
+              <h3 class="skill-card__title" data-i18n="skill.backend">Backend</h3>
               <p class="skill-card__items">
                 C# / .NET &bull; Node.js &bull; TypeScript &bull; Python &bull; REST APIs
               </p>
@@ -140,7 +152,7 @@
               aria-hidden="true"
             />
             <div class="skill-card__content">
-              <h3 class="skill-card__title">DevOps & CI/CD</h3>
+              <h3 class="skill-card__title" data-i18n="skill.devops">DevOps & CI/CD</h3>
               <p class="skill-card__items">
                 Docker &bull; GitHub Actions &bull; GitLab CI &bull; Terraform &bull; Kubernetes
               </p>
@@ -154,7 +166,7 @@
               aria-hidden="true"
             />
             <div class="skill-card__content">
-              <h3 class="skill-card__title">Observabilidade</h3>
+              <h3 class="skill-card__title" data-i18n="skill.observability">Observabilidade</h3>
               <p class="skill-card__items">
                 OpenTelemetry &bull; Monitoramento &bull; Dashboards &bull;
                 Alertas
@@ -169,7 +181,7 @@
               aria-hidden="true"
             />
             <div class="skill-card__content">
-              <h3 class="skill-card__title">Frontend</h3>
+              <h3 class="skill-card__title" data-i18n="skill.frontend">Frontend</h3>
               <p class="skill-card__items">
                 TypeScript &bull; JavaScript &bull; React &bull; Angular &bull; Vue &bull;
                 HTML/CSS
@@ -184,7 +196,7 @@
               aria-hidden="true"
             />
             <div class="skill-card__content">
-              <h3 class="skill-card__title">Segurança</h3>
+              <h3 class="skill-card__title" data-i18n="skill.security">Segurança</h3>
               <p class="skill-card__items">
                 Trivy &bull; SonarQube &bull; Quality Gates &bull; SAST/DAST
               </p>
@@ -198,7 +210,7 @@
               aria-hidden="true"
             />
             <div class="skill-card__content">
-              <h3 class="skill-card__title">Pacotes & Libs</h3>
+              <h3 class="skill-card__title" data-i18n="skill.packages">Pacotes & Libs</h3>
               <p class="skill-card__items">
                 NuGet &bull; NPM &bull; ESLint Config &bull; Bibliotecas Open
                 Source
@@ -212,7 +224,7 @@
     <!-- Projects -->
     <section class="section" id="projects">
       <div class="container">
-        <h2 class="section__title">Projetos em Destaque</h2>
+        <h2 class="section__title" data-i18n="projects.title">Projetos em Destaque</h2>
         <div class="projects__grid">
           <a
             href="https://tooark.com/"
@@ -221,13 +233,13 @@
             class="project-card project-card--featured"
           >
             <div class="project-card__header">
-              <span class="project-card__tag">Ecossistema</span>
+              <span class="project-card__tag" data-i18n="project.tooark.tag">Ecossistema</span>
             </div>
             <h3 class="project-card__title">Tooark</h3>
             <p class="project-card__desc">
-              Ecossistema com pacotes, ferramentas e projetos open source para desenvolvedores e
-              DevOps. Inclui <span id="tooark-packages">0</span> pacotes NuGet, GitHub Actions, templates CI/CD,
-              libs de observabilidade e mais.
+              <span data-i18n="project.tooark.desc">Ecossistema com pacotes, ferramentas e projetos open source para desenvolvedores e
+              DevOps. Inclui</span> <span id="tooark-packages">0</span> <span data-i18n="project.tooark.desc.mid">pacotes NuGet, GitHub Actions, templates CI/CD,
+              libs de observabilidade e mais.</span>
             </p>
             <div class="project-card__tech">
               <span>C#</span><span>.NET</span><span>Shell</span>
@@ -243,12 +255,12 @@
             class="project-card"
           >
             <div class="project-card__header">
-              <span class="project-card__tag">Biblioteca</span>
+              <span class="project-card__tag" data-i18n="project.net.tag">Biblioteca</span>
             </div>
             <h3 class="project-card__title">Tooark .NET</h3>
             <p class="project-card__desc">
-              Biblioteca de ferramentas C# com validações, notificações, value
-              objects, DTOs, entidades e utilitários. <span id="tooark-net-downloads">0</span> downloads.
+              <span data-i18n="project.net.desc">Biblioteca de ferramentas C# com validações, notificações, value
+              objects, DTOs, entidades e utilitários.</span> <span id="tooark-net-downloads">0</span> <span data-i18n="project.net.downloads">downloads.</span>
             </p>
             <div class="project-card__tech">
               <span>C#</span><span>.NET 8.0+</span><span>NuGet</span>
@@ -262,10 +274,10 @@
             class="project-card"
           >
             <div class="project-card__header">
-              <span class="project-card__tag">CI/CD</span>
+              <span class="project-card__tag" data-i18n="project.trivy.tag">CI/CD</span>
             </div>
             <h3 class="project-card__title">Trivy Summary Action</h3>
-            <p class="project-card__desc">
+            <p class="project-card__desc" data-i18n="project.trivy.desc">
               GitHub Action para criar resumos de scan de segurança de imagens
               Docker com Trivy.
             </p>
@@ -281,10 +293,10 @@
             class="project-card"
           >
             <div class="project-card__header">
-              <span class="project-card__tag">Observabilidade</span>
+              <span class="project-card__tag" data-i18n="project.obs.tag">Observabilidade</span>
             </div>
             <h3 class="project-card__title">Observability Node.js</h3>
-            <p class="project-card__desc">
+            <p class="project-card__desc" data-i18n="project.obs.desc">
               Biblioteca Node.js para pré-configuração do OpenTelemetry em
               aplicações backend.
             </p>
@@ -300,10 +312,10 @@
             class="project-card"
           >
             <div class="project-card__header">
-              <span class="project-card__tag">Ferramenta</span>
+              <span class="project-card__tag" data-i18n="project.eslint.tag">Ferramenta</span>
             </div>
             <h3 class="project-card__title">@tooark/eslint</h3>
-            <p class="project-card__desc">
+            <p class="project-card__desc" data-i18n="project.eslint.desc">
               Configuração compartilhada de ESLint para projetos Node, React,
               Angular e Vue.
             </p>
@@ -319,10 +331,10 @@
             class="project-card"
           >
             <div class="project-card__header">
-              <span class="project-card__tag">Infra</span>
+              <span class="project-card__tag" data-i18n="project.base.tag">Infra</span>
             </div>
             <h3 class="project-card__title">Base Images</h3>
-            <p class="project-card__desc">
+            <p class="project-card__desc" data-i18n="project.base.desc">
               Imagens Docker base otimizadas para deploy de aplicações em
               ambientes de produção.
             </p>
@@ -337,6 +349,7 @@
             target="_blank"
             rel="noopener"
             class="btn btn--outline"
+            data-i18n="projects.more"
           >
             Ver todos no GitHub
           </a>
@@ -347,8 +360,8 @@
     <!-- Contact -->
     <section class="section section--alt" id="contact">
       <div class="container">
-        <h2 class="section__title">Contato</h2>
-        <p class="contact__text">
+        <h2 class="section__title" data-i18n="contact.title">Contato</h2>
+        <p class="contact__text" data-i18n="contact.text">
           Quer trocar uma ideia, colaborar em um projeto ou só dar um oi? Me
           encontre nas redes abaixo.
         </p>
@@ -427,7 +440,7 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container footer__content">
-        <p>&copy; 2026 Paulo Freitas. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Paulo Freitas. <span data-i18n="footer.rights">Todos os direitos reservados.</span></p>
         <p>
           <a
             href="https://tooark.com/"
@@ -446,6 +459,7 @@
       </div>
     </footer>
 
+    <script src="./js/i18n.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>
