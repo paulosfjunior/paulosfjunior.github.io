@@ -22,14 +22,14 @@ if (toggle && menu) {
  * @param {number} value
  * @param {number} multiple
  */
-function roundDown (value, multiple) {
+function roundDown(value, multiple) {
   return Math.floor(value / multiple) * multiple;
 }
 
 /**
  * @param {number} total
  */
-function formatDownloads (total) {
+function formatDownloads(total) {
   if (total >= 1_000_000) {
     const rounded = roundDown(total, 100_000);
     const display = (rounded / 1_000_000).toFixed(1).replace(/\.0$/, "");
@@ -42,21 +42,27 @@ function formatDownloads (total) {
 /**
  * @param {number} total
  */
-function formatDownloadsText (total) {
+function formatDownloadsText(total) {
   if (total >= 1_000_000) {
     const rounded = roundDown(total, 100_000);
     const display = (rounded / 1_000_000).toFixed(1).replace(/\.0$/, "");
-    return display + " milhão";
+    return display + " " + t("downloads.million");
   }
   const rounded = roundDown(total, 1000);
-  return rounded >= 1000 ? Math.floor(rounded / 1000) + " mil" : rounded.toString();
+  if (rounded >= 1000) {
+    const value = Math.floor(rounded / 1000);
+    const unit = t("downloads.thousand");
+    // PT: "91 mil", EN: "91k"
+    return unit === "k" ? value + unit : value + " " + unit;
+  }
+  return rounded.toString();
 }
 
 /**
  * @param {number} count
  * @param {number} multiple
  */
-function formatRepos (count, multiple) {
+function formatRepos(count, multiple) {
   return roundDown(count, multiple) + "+";
 }
 
@@ -64,12 +70,12 @@ function formatRepos (count, multiple) {
  * @param {string} id
  * @param {string | null} value
  */
-function setText (id, value) {
+function setText(id, value) {
   const el = document.getElementById(id);
   if (el) el.textContent = value;
 }
 
-async function fetchStats () {
+async function fetchStats() {
   try {
     const [userRes, orgRes, nugetRes] = await Promise.all([
       fetch("https://api.github.com/users/paulosfjunior"),
@@ -113,4 +119,6 @@ async function fetchStats () {
   }
 }
 
+// --- Init ---
+applyTranslations();
 fetchStats();

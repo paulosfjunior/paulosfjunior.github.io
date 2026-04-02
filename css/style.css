@@ -115,6 +115,34 @@ a:hover {
   color: var(--color-text);
 }
 
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all var(--transition);
+  margin-left: 8px;
+}
+
+.lang-toggle__icon {
+  width: 14px;
+  height: 14px;
+}
+
+.lang-toggle:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
 .nav__toggle {
   display: none;
   flex-direction: column;
@@ -207,14 +235,12 @@ a:hover {
   height: 460px;
   border-radius: 50%;
   padding: 5px;
-  background: conic-gradient(
-    from 0deg,
-    var(--color-primary),
-    var(--color-accent),
-    var(--color-primary),
-    var(--color-accent),
-    var(--color-primary)
-  );
+  background: conic-gradient(from 0deg,
+      var(--color-primary),
+      var(--color-accent),
+      var(--color-primary),
+      var(--color-accent),
+      var(--color-primary));
   box-shadow:
     0 0 40px rgba(249, 115, 22, 0.2),
     0 0 80px rgba(249, 115, 22, 0.08);
@@ -635,10 +661,30 @@ a:hover {
 
   .nav__menu--open {
     display: flex;
+    gap: 24px;
+  }
+
+  .nav__link {
+    font-size: 1.15rem;
   }
 
   .nav__toggle {
     display: flex;
+    order: 3;
+  }
+
+  .lang-toggle {
+    order: 2;
+    font-size: 1.15rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lang-toggle svg {
+    height: 1.2rem;
+    width: 1.2rem;
   }
 
   .hero__name {
