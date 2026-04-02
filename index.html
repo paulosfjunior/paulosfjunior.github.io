@@ -1,281 +1,451 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Paulo Freitas — Software Developer & DevOps</title>
-  <meta name="description" content="Desenvolvedor de Software e DevOps. Criador do projeto Tooark — ferramentas open source para desenvolvedores.">
-  <link rel="shortcut icon" href="./image/github.png" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Paulo Freitas — Software Developer & DevOps</title>
+    <meta
+      name="description"
+      content="Desenvolvedor de Software e DevOps. Criador do projeto Tooark — ferramentas open source para desenvolvedores."
+    />
+    <link rel="icon" href="./media/github.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Header / Navbar -->
+    <header class="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">paulo<span>freitas</span></a>
+        <button class="nav__toggle" id="navToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__menu" id="navMenu">
+          <li><a href="#about" class="nav__link">Sobre</a></li>
+          <li><a href="#skills" class="nav__link">Skills</a></li>
+          <li><a href="#projects" class="nav__link">Projetos</a></li>
+          <li><a href="#contact" class="nav__link">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <!-- Header / Navbar -->
-  <header class="header">
-    <nav class="nav container">
-      <a href="#" class="nav__logo">paulo<span>freitas</span></a>
-      <button class="nav__toggle" id="navToggle" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav__menu" id="navMenu">
-        <li><a href="#about" class="nav__link">Sobre</a></li>
-        <li><a href="#skills" class="nav__link">Skills</a></li>
-        <li><a href="#projects" class="nav__link">Projetos</a></li>
-        <li><a href="#contact" class="nav__link">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="container hero__content">
-      <div class="hero__text">
-        <p class="hero__greeting">Olá, eu sou</p>
-        <h1 class="hero__name">Paulo Freitas</h1>
-        <p class="hero__role">Software Developer & DevOps</p>
-        <p class="hero__description">
-          Desenvolvedor de software apaixonado por automação, DevOps e ferramentas open source.
-          Criador do <a href="https://tooark.com/" target="_blank" rel="noopener">Tooark</a> — um ecossistema de bibliotecas e ferramentas para desenvolvedores.
-        </p>
-        <div class="hero__actions">
-          <a href="#projects" class="btn btn--primary">Ver Projetos</a>
-          <a href="#contact" class="btn btn--outline">Contato</a>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="container hero__content">
+        <div class="hero__text">
+          <p class="hero__greeting">Olá, eu sou</p>
+          <h1 class="hero__name">Paulo Freitas</h1>
+          <p class="hero__role">Software Developer & DevOps</p>
+          <p class="hero__description">
+            Desenvolvedor de software apaixonado por DevOps e ferramentas open
+            source. Criador do
+            <strong
+              ><a href="https://tooark.com/" target="_blank" rel="noopener"
+                >Tooark</a
+              ></strong
+            >
+            — um ecossistema de bibliotecas e ferramentas para desenvolvedores e
+            DevOps.
+          </p>
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn--primary">Ver Projetos</a>
+            <a href="#contact" class="btn btn--outline">Contato</a>
+          </div>
+        </div>
+        <div class="hero__image">
+          <div class="hero__avatar-ring">
+            <img
+              src="https://github.com/paulosfjunior.png?size=460"
+              alt="Paulo Freitas"
+              class="hero__avatar"
+            />
+          </div>
         </div>
       </div>
-      <div class="hero__image">
-        <img src="./image/perfil.jpg" alt="Paulo Freitas" class="hero__avatar">
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- About -->
-  <section class="section" id="about">
-    <div class="container">
-      <h2 class="section__title">Sobre mim</h2>
-      <div class="about__content">
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section__title">Sobre mim</h2>
+        <div class="about__content">
+          <p>
+            Sou desenvolvedor de software com experiência em
+            <strong>.NET/C#</strong>, <strong>Terraform</strong>,
+            <strong>TypeScript</strong>, <strong>Node.js</strong> e práticas de
+            <strong>DevOps</strong>. Trabalho no <strong>Grupo Jacto</strong> em
+            Pompeia, SP — Brasil.
+          </p>
+          <p>
+            Fundei o projeto
+            <strong
+              ><a href="https://tooark.com/" target="_blank" rel="noopener"
+                >Tooark</a
+              ></strong
+            >, onde mantenho bibliotecas open source, GitHub Actions, templates
+            de CI/CD e ferramentas de observabilidade que já acumulam mais de
+            <strong><span id="about-downloads">0</span> downloads</strong> nos pacotes NuGet.
+          </p>
+          <div class="about__stats">
+            <div class="stat">
+              <span class="stat__number" id="stat-repos">--</span>
+              <span class="stat__label">Repositórios</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number" id="stat-downloads">--</span>
+              <span class="stat__label">Downloads NuGet</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number" id="stat-packages">--</span>
+              <span class="stat__label">Pacotes .NET</span>
+            </div>
+            <div class="stat">
+              <span class="stat__number" id="stat-tooark-repos">--</span>
+              <span class="stat__label">Repos Tooark</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <h2 class="section__title">Skills & Tecnologias</h2>
+        <div class="skills__grid">
+          <div class="skill-card">
+            <img
+              src="./media/backend.svg"
+              alt=""
+              class="skill-card__bg"
+              aria-hidden="true"
+            />
+            <div class="skill-card__content">
+              <h3 class="skill-card__title">Backend</h3>
+              <p class="skill-card__items">
+                C# / .NET &bull; Node.js &bull; TypeScript &bull; Python &bull; REST APIs
+              </p>
+            </div>
+          </div>
+          <div class="skill-card">
+            <img
+              src="./media/devops.svg"
+              alt=""
+              class="skill-card__bg"
+              aria-hidden="true"
+            />
+            <div class="skill-card__content">
+              <h3 class="skill-card__title">DevOps & CI/CD</h3>
+              <p class="skill-card__items">
+                Docker &bull; GitHub Actions &bull; GitLab CI &bull; Terraform &bull; Kubernetes
+              </p>
+            </div>
+          </div>
+          <div class="skill-card">
+            <img
+              src="./media/observability.svg"
+              alt=""
+              class="skill-card__bg"
+              aria-hidden="true"
+            />
+            <div class="skill-card__content">
+              <h3 class="skill-card__title">Observabilidade</h3>
+              <p class="skill-card__items">
+                OpenTelemetry &bull; Monitoramento &bull; Dashboards &bull;
+                Alertas
+              </p>
+            </div>
+          </div>
+          <div class="skill-card">
+            <img
+              src="./media/frontend.svg"
+              alt=""
+              class="skill-card__bg"
+              aria-hidden="true"
+            />
+            <div class="skill-card__content">
+              <h3 class="skill-card__title">Frontend</h3>
+              <p class="skill-card__items">
+                TypeScript &bull; JavaScript &bull; React &bull; Angular &bull; Vue &bull;
+                HTML/CSS
+              </p>
+            </div>
+          </div>
+          <div class="skill-card">
+            <img
+              src="./media/security.svg"
+              alt=""
+              class="skill-card__bg"
+              aria-hidden="true"
+            />
+            <div class="skill-card__content">
+              <h3 class="skill-card__title">Segurança</h3>
+              <p class="skill-card__items">
+                Trivy &bull; SonarQube &bull; Quality Gates &bull; SAST/DAST
+              </p>
+            </div>
+          </div>
+          <div class="skill-card">
+            <img
+              src="./media/package-and-lib.svg"
+              alt=""
+              class="skill-card__bg"
+              aria-hidden="true"
+            />
+            <div class="skill-card__content">
+              <h3 class="skill-card__title">Pacotes & Libs</h3>
+              <p class="skill-card__items">
+                NuGet &bull; NPM &bull; ESLint Config &bull; Bibliotecas Open
+                Source
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section__title">Projetos em Destaque</h2>
+        <div class="projects__grid">
+          <a
+            href="https://tooark.com/"
+            target="_blank"
+            rel="noopener"
+            class="project-card project-card--featured"
+          >
+            <div class="project-card__header">
+              <span class="project-card__tag">Ecossistema</span>
+            </div>
+            <h3 class="project-card__title">Tooark</h3>
+            <p class="project-card__desc">
+              Ecossistema com pacotes, ferramentas e projetos open source para desenvolvedores e
+              DevOps. Inclui <span id="tooark-packages">0</span> pacotes NuGet, GitHub Actions, templates CI/CD,
+              libs de observabilidade e mais.
+            </p>
+            <div class="project-card__tech">
+              <span>C#</span><span>.NET</span><span>Shell</span>
+              <span>TypeScript</span><span>JavaScript</span><span>Docker</span>
+              <span>Terraform</span>
+            </div>
+          </a>
+
+          <a
+            href="https://www.nuget.org/profiles/Tooark"
+            target="_blank"
+            rel="noopener"
+            class="project-card"
+          >
+            <div class="project-card__header">
+              <span class="project-card__tag">Biblioteca</span>
+            </div>
+            <h3 class="project-card__title">Tooark .NET</h3>
+            <p class="project-card__desc">
+              Biblioteca de ferramentas C# com validações, notificações, value
+              objects, DTOs, entidades e utilitários. <span id="tooark-net-downloads">0</span> downloads.
+            </p>
+            <div class="project-card__tech">
+              <span>C#</span><span>.NET 8.0+</span><span>NuGet</span>
+            </div>
+          </a>
+
+          <a
+            href="https://github.com/Tooark/trivy-summary-action"
+            target="_blank"
+            rel="noopener"
+            class="project-card"
+          >
+            <div class="project-card__header">
+              <span class="project-card__tag">CI/CD</span>
+            </div>
+            <h3 class="project-card__title">Trivy Summary Action</h3>
+            <p class="project-card__desc">
+              GitHub Action para criar resumos de scan de segurança de imagens
+              Docker com Trivy.
+            </p>
+            <div class="project-card__tech">
+              <span>Shell</span><span>GitHub Actions</span><span>Docker</span>
+            </div>
+          </a>
+
+          <a
+            href="https://github.com/Tooark/tooark-observability-nodejs"
+            target="_blank"
+            rel="noopener"
+            class="project-card"
+          >
+            <div class="project-card__header">
+              <span class="project-card__tag">Observabilidade</span>
+            </div>
+            <h3 class="project-card__title">Observability Node.js</h3>
+            <p class="project-card__desc">
+              Biblioteca Node.js para pré-configuração do OpenTelemetry em
+              aplicações backend.
+            </p>
+            <div class="project-card__tech">
+              <span>Node.js</span><span>OpenTelemetry</span>
+            </div>
+          </a>
+
+          <a
+            href="https://www.npmjs.com/package/@tooark/eslint"
+            target="_blank"
+            rel="noopener"
+            class="project-card"
+          >
+            <div class="project-card__header">
+              <span class="project-card__tag">Ferramenta</span>
+            </div>
+            <h3 class="project-card__title">@tooark/eslint</h3>
+            <p class="project-card__desc">
+              Configuração compartilhada de ESLint para projetos Node, React,
+              Angular e Vue.
+            </p>
+            <div class="project-card__tech">
+              <span>JavaScript</span><span>ESLint</span><span>NPM</span>
+            </div>
+          </a>
+
+          <a
+            href="https://github.com/orgs/Tooark/packages?repo_name=base-images"
+            target="_blank"
+            rel="noopener"
+            class="project-card"
+          >
+            <div class="project-card__header">
+              <span class="project-card__tag">Infra</span>
+            </div>
+            <h3 class="project-card__title">Base Images</h3>
+            <p class="project-card__desc">
+              Imagens Docker base otimizadas para deploy de aplicações em
+              ambientes de produção.
+            </p>
+            <div class="project-card__tech">
+              <span>Dockerfile</span><span>Docker</span>
+            </div>
+          </a>
+        </div>
+        <div class="projects__more">
+          <a
+            href="https://github.com/paulosfjunior"
+            target="_blank"
+            rel="noopener"
+            class="btn btn--outline"
+          >
+            Ver todos no GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--alt" id="contact">
+      <div class="container">
+        <h2 class="section__title">Contato</h2>
+        <p class="contact__text">
+          Quer trocar uma ideia, colaborar em um projeto ou só dar um oi? Me
+          encontre nas redes abaixo.
+        </p>
+        <div class="contact__links">
+          <a
+            href="https://github.com/paulosfjunior"
+            target="_blank"
+            rel="noopener"
+            class="contact-card"
+          >
+            <svg
+              class="contact-card__icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+            <span class="contact-card__label">GitHub</span>
+            <span class="contact-card__user">@paulosfjunior</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/paulosfjunior/"
+            target="_blank"
+            rel="noopener"
+            class="contact-card"
+          >
+            <svg
+              class="contact-card__icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              />
+            </svg>
+            <span class="contact-card__label">LinkedIn</span>
+            <span class="contact-card__user">paulosfjunior</span>
+          </a>
+          <a
+            href="https://gitlab.com/paulosfjunior"
+            target="_blank"
+            rel="noopener"
+            class="contact-card"
+          >
+            <svg
+              class="contact-card__icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M23.955 13.587l-1.342-4.135-2.664-8.189a.455.455 0 00-.867 0L16.418 9.45H7.582L4.918 1.263a.455.455 0 00-.867 0L1.386 9.452.044 13.587a.924.924 0 00.331 1.023L12 23.054l11.625-8.443a.92.92 0 00.33-1.024"
+              />
+            </svg>
+            <span class="contact-card__label">GitLab</span>
+            <span class="contact-card__user">@paulosfjunior</span>
+          </a>
+          <a href="mailto:paulosfjunior@hotmail.com" class="contact-card">
+            <svg
+              class="contact-card__icon"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+              />
+            </svg>
+            <span class="contact-card__label">Email</span>
+            <span class="contact-card__user">paulosfjunior</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__content">
+        <p>&copy; 2026 Paulo Freitas. Todos os direitos reservados.</p>
         <p>
-          Sou desenvolvedor de software com experiência em <strong>.NET/C#</strong>, <strong>TypeScript</strong>, <strong>Node.js</strong> e práticas de <strong>DevOps</strong>.
-          Trabalho no <strong>Grupo Jacto</strong> em Herculândia, SP — Brasil.
+          <a
+            href="https://tooark.com/"
+            target="_blank"
+            rel="noopener"
+            class="footer__link"
+          >
+            <img
+              src="./media/tooark-logo.svg"
+              alt="tooark"
+              class="footer__icon"
+            />
+            <strong> Tooark </strong>
+          </a>
         </p>
-        <p>
-          Fundei o projeto <a href="https://tooark.com/" target="_blank" rel="noopener">Tooark</a>,
-          onde mantenho bibliotecas open source, GitHub Actions, templates de CI/CD e ferramentas de observabilidade
-          que já acumulam mais de <strong>91 mil downloads</strong> nos pacotes NuGet.
-        </p>
-        <div class="about__stats">
-          <div class="stat">
-            <span class="stat__number">24+</span>
-            <span class="stat__label">Repositórios</span>
-          </div>
-          <div class="stat">
-            <span class="stat__number">91k+</span>
-            <span class="stat__label">Downloads NuGet</span>
-          </div>
-          <div class="stat">
-            <span class="stat__number">13</span>
-            <span class="stat__label">Pacotes .NET</span>
-          </div>
-          <div class="stat">
-            <span class="stat__number">12</span>
-            <span class="stat__label">Repos Tooark</span>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- Skills -->
-  <section class="section section--alt" id="skills">
-    <div class="container">
-      <h2 class="section__title">Skills & Tecnologias</h2>
-      <div class="skills__grid">
-        <div class="skill-card">
-          <div class="skill-card__icon">&#9776;</div>
-          <h3 class="skill-card__title">Backend</h3>
-          <p class="skill-card__items">C# / .NET &bull; Node.js &bull; TypeScript &bull; REST APIs</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__icon">&#9881;</div>
-          <h3 class="skill-card__title">DevOps & CI/CD</h3>
-          <p class="skill-card__items">Docker &bull; GitHub Actions &bull; GitLab CI &bull; Terraform</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__icon">&#128269;</div>
-          <h3 class="skill-card__title">Observabilidade</h3>
-          <p class="skill-card__items">OpenTelemetry &bull; Monitoramento &bull; Dashboards &bull; Alertas</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__icon">&#128187;</div>
-          <h3 class="skill-card__title">Frontend</h3>
-          <p class="skill-card__items">JavaScript &bull; React &bull; Angular &bull; Vue &bull; HTML/CSS</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__icon">&#128274;</div>
-          <h3 class="skill-card__title">Segurança</h3>
-          <p class="skill-card__items">Trivy &bull; SonarQube &bull; Quality Gates &bull; SAST/DAST</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-card__icon">&#128230;</div>
-          <h3 class="skill-card__title">Pacotes & Libs</h3>
-          <p class="skill-card__items">NuGet &bull; NPM &bull; ESLint Config &bull; Bibliotecas Open Source</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section class="section" id="projects">
-    <div class="container">
-      <h2 class="section__title">Projetos em Destaque</h2>
-      <div class="projects__grid">
-
-        <a href="https://tooark.com/" target="_blank" rel="noopener" class="project-card project-card--featured">
-          <div class="project-card__header">
-            <span class="project-card__tag">Open Source</span>
-          </div>
-          <h3 class="project-card__title">Tooark</h3>
-          <p class="project-card__desc">
-            Ecossistema de ferramentas open source para desenvolvedores e DevOps.
-            Inclui 13 pacotes NuGet, GitHub Actions, templates CI/CD, libs de observabilidade e mais.
-          </p>
-          <div class="project-card__tech">
-            <span>C#</span><span>.NET</span><span>Shell</span><span>JavaScript</span><span>Docker</span>
-          </div>
-        </a>
-
-        <a href="https://github.com/Tooark/tooark" target="_blank" rel="noopener" class="project-card">
-          <div class="project-card__header">
-            <span class="project-card__tag">Biblioteca</span>
-          </div>
-          <h3 class="project-card__title">Tooark .NET</h3>
-          <p class="project-card__desc">
-            Biblioteca de ferramentas C# com validações, notificações, value objects, DTOs, entidades e utilitários. 91k+ downloads.
-          </p>
-          <div class="project-card__tech">
-            <span>C#</span><span>.NET 8.0+</span><span>NuGet</span>
-          </div>
-        </a>
-
-        <a href="https://github.com/Tooark/trivy-summary-action" target="_blank" rel="noopener" class="project-card">
-          <div class="project-card__header">
-            <span class="project-card__tag">CI/CD</span>
-          </div>
-          <h3 class="project-card__title">Trivy Summary Action</h3>
-          <p class="project-card__desc">
-            GitHub Action para criar resumos de scan de segurança de imagens Docker com Trivy.
-          </p>
-          <div class="project-card__tech">
-            <span>Shell</span><span>GitHub Actions</span><span>Docker</span>
-          </div>
-        </a>
-
-        <a href="https://github.com/Tooark/tooark-observability-nodejs" target="_blank" rel="noopener" class="project-card">
-          <div class="project-card__header">
-            <span class="project-card__tag">Observabilidade</span>
-          </div>
-          <h3 class="project-card__title">Observability Node.js</h3>
-          <p class="project-card__desc">
-            Biblioteca Node.js para pré-configuração do OpenTelemetry em aplicações backend.
-          </p>
-          <div class="project-card__tech">
-            <span>Node.js</span><span>OpenTelemetry</span>
-          </div>
-        </a>
-
-        <a href="https://github.com/Tooark/eslint" target="_blank" rel="noopener" class="project-card">
-          <div class="project-card__header">
-            <span class="project-card__tag">Ferramenta</span>
-          </div>
-          <h3 class="project-card__title">@tooark/eslint</h3>
-          <p class="project-card__desc">
-            Configuração compartilhada de ESLint para projetos Node, React, Angular e Vue.
-          </p>
-          <div class="project-card__tech">
-            <span>JavaScript</span><span>ESLint</span><span>NPM</span>
-          </div>
-        </a>
-
-        <a href="https://github.com/Tooark/base-images" target="_blank" rel="noopener" class="project-card">
-          <div class="project-card__header">
-            <span class="project-card__tag">Infra</span>
-          </div>
-          <h3 class="project-card__title">Base Images</h3>
-          <p class="project-card__desc">
-            Imagens Docker base otimizadas para deploy de aplicações em ambientes de produção.
-          </p>
-          <div class="project-card__tech">
-            <span>Dockerfile</span><span>Docker</span>
-          </div>
-        </a>
-
-      </div>
-      <div class="projects__more">
-        <a href="https://github.com/paulosfjunior" target="_blank" rel="noopener" class="btn btn--outline">
-          Ver todos no GitHub
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="section section--alt" id="contact">
-    <div class="container">
-      <h2 class="section__title">Contato</h2>
-      <p class="contact__text">
-        Quer trocar uma ideia, colaborar em um projeto ou só dar um oi? Me encontre nas redes abaixo.
-      </p>
-      <div class="contact__links">
-        <a href="https://github.com/paulosfjunior" target="_blank" rel="noopener" class="contact-card">
-          <svg class="contact-card__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          <span class="contact-card__label">GitHub</span>
-          <span class="contact-card__user">@paulosfjunior</span>
-        </a>
-        <a href="https://www.linkedin.com/in/paulosfjunior/" target="_blank" rel="noopener" class="contact-card">
-          <svg class="contact-card__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          <span class="contact-card__label">LinkedIn</span>
-          <span class="contact-card__user">paulosfjunior</span>
-        </a>
-        <a href="https://gitlab.com/paulosfjunior" target="_blank" rel="noopener" class="contact-card">
-          <svg class="contact-card__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.955 13.587l-1.342-4.135-2.664-8.189a.455.455 0 00-.867 0L16.418 9.45H7.582L4.918 1.263a.455.455 0 00-.867 0L1.386 9.452.044 13.587a.924.924 0 00.331 1.023L12 23.054l11.625-8.443a.92.92 0 00.33-1.024"/></svg>
-          <span class="contact-card__label">GitLab</span>
-          <span class="contact-card__user">@paulosfjunior</span>
-        </a>
-        <a href="mailto:paulosfjunior@hotmail.com" class="contact-card">
-          <svg class="contact-card__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          <span class="contact-card__label">Email</span>
-          <span class="contact-card__user">paulosfjunior@hotmail.com</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer__content">
-      <p>&copy; 2026 Paulo Freitas. Todos os direitos reservados.</p>
-      <p>
-        <a href="https://tooark.com/" target="_blank" rel="noopener">Tooark</a>
-      </p>
-    </div>
-  </footer>
-
-  <script>
-    const toggle = document.getElementById('navToggle');
-    const menu = document.getElementById('navMenu');
-    toggle.addEventListener('click', () => {
-      menu.classList.toggle('nav__menu--open');
-      toggle.classList.toggle('nav__toggle--active');
-    });
-    document.querySelectorAll('.nav__link').forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('nav__menu--open');
-        toggle.classList.remove('nav__toggle--active');
-      });
-    });
-  </script>
-
-</body>
-</html>                                		                            
+    <script src="./js/main.js"></script>
+  </body>
+</html>
