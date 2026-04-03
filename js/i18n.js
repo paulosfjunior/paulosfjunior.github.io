@@ -1,5 +1,7 @@
 const translations = {
   pt: {
+    "header.languageSelector": "Selecionar idioma",
+
     // Nav
     "nav.about": "Sobre",
     "nav.skills": "Skills",
@@ -80,6 +82,8 @@ const translations = {
   },
 
   en: {
+    "header.languageSelector": "Select language",
+
     // Nav
     "nav.about": "About",
     "nav.skills": "Skills",
@@ -160,10 +164,29 @@ const translations = {
   },
 };
 
-/** @type {"pt" | "en"} */
-let currentLang = /** @type {"pt" | "en"} */ (localStorage.getItem("lang")) || "pt";
+const savedLang = localStorage.getItem("lang");
 
+// ---- Language detection -------------
 /**
+ * Usa preferência salva quando disponível; caso contrário, detecta o idioma do navegador.
+ * @returns {"pt" | "en"}
+ */
+function getInitialLang () {
+  // Verifica se o idioma salvo é válido
+  if (savedLang === "pt" || savedLang === "en") {
+    return /** @type {"pt" | "en"} */ (savedLang);
+  }
+
+  const browserLang = (navigator.language || "").toLowerCase();
+  return browserLang.startsWith("pt") ? "pt" : "en";
+}
+
+/** @type {"pt" | "en"} */
+let currentLang = getInitialLang();
+
+// ---- Translation functions ----------
+/**
+ * Recupera a tradução para uma chave específica com base no idioma atual.
  * @param {string} key
  */
 function t (key) {
@@ -171,36 +194,84 @@ function t (key) {
   return translations[currentLang]?.[key] || translations.pt[key] || key;
 }
 
+/**
+ * Aplica as traduções a todos os elementos com atributos data-i18n.
+ */
 function applyTranslations () {
   document.documentElement.lang = currentLang === "pt" ? "pt-BR" : "en";
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
-    if (key) el.textContent = t(key);
+
+    // Para elementos de texto, atualiza o conteúdo textual
+    if (key) {
+      el.textContent = t(key);
+    }
   });
 
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
     const key = el.getAttribute("data-i18n-placeholder");
-    if (key) /** @type {HTMLInputElement} */ (el).placeholder = t(key);
+
+    // Para elementos de input, atualiza o placeholder
+    if (key) {
+       /** @type {HTMLInputElement} */ (el).placeholder = t(key);
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-aria-label");
+
+    // Para elementos com aria-label, atualiza o atributo
+    if (key) {
+      el.setAttribute("aria-label", t(key));
+    }
   });
 }
 
 /**
+ * Atualiza o estado dos botões de troca de idioma para refletir o idioma atual.
+ */
+function updateLanguageSwitch () {
+  document.querySelectorAll(".lang-switch__btn").forEach((btn) => {
+    const lang = btn.getAttribute("data-lang");
+    const isActive = lang === currentLang;
+    btn.classList.toggle("active", isActive);
+    btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
+}
+
+/**
+ * Define o idioma atual, salva a preferência e reaplica as traduções.
  * @param {"pt" | "en"} lang
  */
 function setLang (lang) {
   currentLang = lang;
   localStorage.setItem("lang", lang);
   applyTranslations();
+  updateLanguageSwitch();
 
-  const btnText = document.querySelector("#langToggle .lang-toggle__text");
-  if (btnText) btnText.textContent = lang === "pt" ? "PT" : "EN";
-
-  // Re-fetch stats with new language format
-  if (typeof fetchStats === "function") fetchStats();
+  // Recarrega as estatísticas para atualizar os textos dinâmicos
+  if (typeof fetchStats === "function") {
+    fetchStats();
+  }
 }
 
-// Toggle language between Portuguese and English
+/**
+ * Alterna o idioma entre Português e Inglês
+ */
 function toggleLang () {
   setLang(currentLang === "pt" ? "en" : "pt");
 }
+
+document.querySelectorAll(".lang-switch__btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const lang = btn.getAttribute("data-lang");
+
+    // Verifica se o idioma é válido antes de aplicar a mudança
+    if (lang === "pt" || lang === "en") {
+      setLang(lang);
+    }
+  });
+});
+
+updateLanguageSwitch();
