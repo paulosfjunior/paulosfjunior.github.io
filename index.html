@@ -29,10 +29,10 @@
     />
     <meta name="author" content="Paulo Freitas" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://paulosfjunior.github.io/" />
+    <link rel="canonical" href="https://paulofreitas.tooark.com/" />
 
     <meta property="og:type" content="profile" />
-    <meta property="og:url" content="https://paulosfjunior.github.io/" />
+    <meta property="og:url" content="https://paulofreitas.tooark.com/" />
     <meta
       property="og:title"
       content="Paulo Freitas — Software Developer & DevOps · Founder of Tooark"
@@ -43,7 +43,7 @@
     />
     <meta
       property="og:image"
-      content="https://paulosfjunior.github.io/media/og-image.png"
+      content="https://paulofreitas.tooark.com/media/og-image.png"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -57,7 +57,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://paulosfjunior.github.io/media/og-image.png"
+      content="https://paulofreitas.tooark.com/media/og-image.png"
     />
 
     <meta name="theme-color" content="#0d1117" />
@@ -70,13 +70,68 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Paulo Freitas",
+        "givenName": "Paulo",
+        "familyName": "Freitas",
+        "alternateName": "paulosfjunior",
+        "url": "https://paulofreitas.tooark.com/",
+        "image": "https://github.com/paulosfjunior.png",
+        "jobTitle": "Software Developer & DevOps",
+        "description": "Software Developer and DevOps. Founder and maintainer of Tooark, an open source ecosystem of libraries and tools for developers and DevOps teams.",
+        "worksFor": { "@type": "Organization", "name": "Grupo Jacto" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Herculândia",
+          "addressRegion": "SP",
+          "addressCountry": "BR"
+        },
+        "sameAs": [
+          "https://github.com/paulosfjunior",
+          "https://gitlab.com/paulosfjunior",
+          "https://www.linkedin.com/in/paulosfjunior/",
+          "https://github.com/sponsors/paulosfjunior",
+          "https://tooark.com/"
+        ],
+        "founder": {
+          "@type": "Organization",
+          "name": "Tooark",
+          "url": "https://tooark.com/",
+          "description": "Open source ecosystem of libraries, tools and templates for developers and DevOps."
+        },
+        "knowsAbout": [
+          ".NET",
+          "C#",
+          "Node.js",
+          "TypeScript",
+          "JavaScript",
+          "Docker",
+          "Kubernetes",
+          "Terraform",
+          "GitHub Actions",
+          "GitLab CI",
+          "DevOps",
+          "OpenTelemetry",
+          "Observability",
+          "Open Source"
+        ]
+      }
+    </script>
   </head>
   <body>
+    <!-- 🎨 Background animation canvas (fixed, behind content) -->
     <canvas id="bgCanvas" aria-hidden="true"></canvas>
-    <a href="#hero" class="skip-link" data-i18n="a11y.skipLink"
-      >Pular para o conteúdo</a
-    >
 
+    <!-- Skip link (a11y) -->
+    <a href="#hero" class="skip-link" data-i18n="a11y.skipLink">
+      Pular para o conteúdo
+    </a>
+
+    <!-- Header / Navbar -->
     <header class="header">
       <nav class="nav container">
         <a href="#" class="nav__logo">paulo<span>freitas</span></a>
@@ -91,30 +146,31 @@
         </button>
         <ul class="nav__menu" id="navMenu">
           <li class="nav__item">
-            <a href="#about" class="nav__link" data-i18n="nav.about">Sobre</a>
+            <a href="#about" class="nav__link" data-i18n="nav.about"> Sobre </a>
           </li>
           <li class="nav__item">
-            <a href="#skills" class="nav__link" data-i18n="nav.skills"
-              >Skills</a
-            >
+            <a href="#skills" class="nav__link" data-i18n="nav.skills">
+              Skills
+            </a>
           </li>
           <li class="nav__item">
-            <a href="#projects" class="nav__link" data-i18n="nav.projects"
-              >Projetos</a
-            >
+            <a href="#projects" class="nav__link" data-i18n="nav.projects">
+              Projetos
+            </a>
           </li>
           <li class="nav__item nav__item--sponsor">
             <a
               href="#sponsor"
               class="nav__link nav__link--sponsor"
               data-i18n="nav.sponsor"
-              >💖 Apoiar</a
             >
+              💖 Apoiar
+            </a>
           </li>
           <li class="nav__item">
-            <a href="#contact" class="nav__link" data-i18n="nav.contact"
-              >Contato</a
-            >
+            <a href="#contact" class="nav__link" data-i18n="nav.contact">
+              Contato
+            </a>
           </li>
           <li class="nav__item nav__item--lang">
             <div
@@ -155,34 +211,36 @@
           </p>
           <p class="hero__badge">
             <span data-i18n="hero.badge">🛠️ Fundador e mantenedor da</span>
-            <a href="https://tooark.com/" target="_blank" rel="noopener"
-              >Tooark</a
-            >
+            <a href="https://tooark.com/" target="_blank" rel="noopener">
+              Tooark
+            </a>
           </p>
           <p class="hero__description">
-            <span data-i18n="hero.description"
-              >Desenvolvedor de software apaixonado por DevOps e ferramentas
-              open source. Construindo bibliotecas, ferramentas e templates que
-              já somam mais de</span
-            >
+            <span data-i18n="hero.description">
+              Desenvolvedor de software apaixonado por DevOps e ferramentas open
+              source. Construindo bibliotecas, ferramentas e templates que já
+              somam mais de
+            </span>
             <strong><span id="hero-downloads">90k+</span></strong>
-            <span data-i18n="hero.description.suffix"
-              >downloads na comunidade.</span
-            >
+            <span data-i18n="hero.description.suffix">
+              downloads na comunidade.
+            </span>
           </p>
           <div class="hero__actions">
             <a
               href="#projects"
               class="btn btn--primary"
               data-i18n="hero.btn.projects"
-              >Ver Projetos</a
             >
+              Ver Projetos
+            </a>
             <a
               href="#contact"
               class="btn btn--outline"
               data-i18n="hero.btn.contact"
-              >Contato</a
             >
+              Contato
+            </a>
             <a
               href="#sponsor"
               class="btn btn--sponsor"
@@ -220,11 +278,12 @@
         <h2 class="section__title" data-i18n="about.title">Sobre mim</h2>
         <div class="about__content">
           <p>
-            <span data-i18n="about.p1.start"
-              >Sou desenvolvedor de software com experiência em</span
-            >
+            <span data-i18n="about.p1.start">
+              Sou desenvolvedor de software com experiência em
+            </span>
             <strong>.NET/C#</strong>, <strong>Terraform</strong>,
-            <strong>TypeScript</strong>, <strong>Node.js</strong>
+            <strong>TypeScript</strong>,
+            <strong>Node.js</strong>
             <span data-i18n="about.p1.mid">e práticas de</span>
             <strong>DevOps</strong>.
             <span data-i18n="about.p1.end">Trabalho no</span>
@@ -234,55 +293,56 @@
           <p>
             <span data-i18n="about.p2.start">Sou fundador e mantenedor do</span>
             <strong
-              ><a href="https://tooark.com/" target="_blank" rel="noopener"
-                >Tooark</a
-              ></strong
-            ><span data-i18n="about.p2.mid"
-              >, onde construo e mantenho bibliotecas open source, extensões
-              para VS Code, templates de CI/CD e ferramentas para
-              desenvolvedores que já acumulam mais de</span
-            >
-            <strong
-              ><span id="about-downloads">0</span>
-              <span data-i18n="about.p2.end">downloads</span></strong
-            >
+              ><a href="https://tooark.com/" target="_blank" rel="noopener">
+                Tooark
+              </a>
+            </strong>
+            <span data-i18n="about.p2.mid">
+              , onde construo e mantenho bibliotecas open source, extensões para
+              VS Code, templates de CI/CD e ferramentas para desenvolvedores que
+              já acumulam mais de
+            </span>
+            <strong>
+              <span id="about-downloads">0</span>
+              <span data-i18n="about.p2.end">downloads</span>
+            </strong>
             <span data-i18n="about.p2.suffix">nos pacotes NuGet.</span>
           </p>
           <p class="about__sponsor-cta">
-            <span data-i18n="about.p3.start"
-              >Se algum dos projetos te ajudou de alguma forma, considere</span
-            >
+            <span data-i18n="about.p3.start">
+              Se algum dos projetos te ajudou de alguma forma, considere
+            </span>
             <a href="#sponsor" class="about__sponsor-link">
               💖 <span data-i18n="about.p3.link">apoiar meu trabalho</span>
             </a>
-            <span data-i18n="about.p3.end"
-              >. Cada apoio ajuda a manter o ecossistema crescendo. 💚</span
-            >
+            <span data-i18n="about.p3.end">
+              . Cada apoio ajuda a manter o ecossistema crescendo. 💚
+            </span>
           </p>
           <div class="about__stats">
             <div class="stat">
-              <span class="stat__number" id="stat-repos">--</span
-              ><span class="stat__label" data-i18n="stat.repos"
-                >Repositórios</span
-              >
+              <span class="stat__number" id="stat-repos"> -- </span>
+              <span class="stat__label" data-i18n="stat.repos">
+                Repositórios
+              </span>
             </div>
             <div class="stat">
-              <span class="stat__number" id="stat-downloads">--</span
-              ><span class="stat__label" data-i18n="stat.downloads"
-                >Downloads NuGet</span
-              >
+              <span class="stat__number" id="stat-downloads"> -- </span>
+              <span class="stat__label" data-i18n="stat.downloads">
+                Downloads NuGet
+              </span>
             </div>
             <div class="stat">
-              <span class="stat__number" id="stat-packages">--</span
-              ><span class="stat__label" data-i18n="stat.packages"
-                >Pacotes .NET</span
-              >
+              <span class="stat__number" id="stat-packages"> -- </span>
+              <span class="stat__label" data-i18n="stat.packages">
+                Pacotes .NET
+              </span>
             </div>
             <div class="stat">
-              <span class="stat__number" id="stat-tooark-repos">--</span
-              ><span class="stat__label" data-i18n="stat.tooark"
-                >Repos Tooark</span
-              >
+              <span class="stat__number" id="stat-tooark-repos"> -- </span>
+              <span class="stat__label" data-i18n="stat.tooark">
+                Repos Tooark
+              </span>
             </div>
           </div>
         </div>
@@ -419,26 +479,29 @@
             class="project-card project-card--featured"
           >
             <div class="project-card__header">
-              <span class="project-card__tag" data-i18n="project.tooark.tag"
-                >Ecossistema</span
-              >
+              <span class="project-card__tag" data-i18n="project.tooark.tag">
+                Ecossistema
+              </span>
             </div>
             <h3 class="project-card__title">Tooark</h3>
             <p class="project-card__desc">
-              <span data-i18n="project.tooark.desc"
-                >Ecossistema com pacotes, ferramentas e projetos open source
-                para desenvolvedores e DevOps. Inclui</span
-              >
+              <span data-i18n="project.tooark.desc">
+                Ecossistema com pacotes, ferramentas e projetos open source para
+                desenvolvedores e DevOps. Inclui
+              </span>
               <span id="tooark-packages">0</span>
-              <span data-i18n="project.tooark.desc.mid"
-                >pacotes NuGet, extensões VS Code, templates CI/CD, libs e
-                mais.</span
-              >
+              <span data-i18n="project.tooark.desc.mid">
+                pacotes NuGet, extensões VS Code, templates CI/CD, libs e mais.
+              </span>
             </p>
             <div class="project-card__tech">
-              <span>C#</span><span>.NET</span><span>Shell</span
-              ><span>TypeScript</span><span>JavaScript</span><span>Docker</span
-              ><span>Terraform</span>
+              <span>C#</span>
+              <span>.NET</span>
+              <span>Shell</span>
+              <span>TypeScript</span>
+              <span>JavaScript</span>
+              <span>Docker</span>
+              <span>Terraform</span>
             </div>
           </a>
           <a
@@ -448,16 +511,16 @@
             class="project-card"
           >
             <div class="project-card__header">
-              <span class="project-card__tag" data-i18n="project.net.tag"
-                >Biblioteca</span
-              >
+              <span class="project-card__tag" data-i18n="project.net.tag">
+                Biblioteca
+              </span>
             </div>
             <h3 class="project-card__title">Tooark .NET</h3>
             <p class="project-card__desc">
-              <span data-i18n="project.net.desc"
-                >Coleção de pacotes C# com validações, notificações, value
-                objects, DTOs, entidades, utilitários e mais.</span
-              >
+              <span data-i18n="project.net.desc">
+                Coleção de pacotes C# com validações, notificações, value
+                objects, DTOs, entidades, utilitários e mais.
+              </span>
               <span id="tooark-net-downloads">0</span>
               <span data-i18n="project.net.downloads">downloads.</span>
             </p>
@@ -472,9 +535,9 @@
             class="project-card"
           >
             <div class="project-card__header">
-              <span class="project-card__tag" data-i18n="project.vscode.tag"
-                >Ferramenta</span
-              >
+              <span class="project-card__tag" data-i18n="project.vscode.tag">
+                Ferramenta
+              </span>
             </div>
             <h3 class="project-card__title">VS Code Extensions</h3>
             <p class="project-card__desc" data-i18n="project.vscode.desc">
@@ -483,8 +546,10 @@
               visual de commits.
             </p>
             <div class="project-card__tech">
-              <span>VS Code</span><span>TypeScript</span><span>Marketplace</span
-              ><span>Open VSX</span>
+              <span>VS Code</span>
+              <span>TypeScript</span>
+              <span>Marketplace</span>
+              <span>Open VSX</span>
             </div>
           </a>
           <a
@@ -494,9 +559,9 @@
             class="project-card"
           >
             <div class="project-card__header">
-              <span class="project-card__tag" data-i18n="project.obs.tag"
-                >Observabilidade</span
-              >
+              <span class="project-card__tag" data-i18n="project.obs.tag">
+                Observabilidade
+              </span>
             </div>
             <h3 class="project-card__title">Tooark.Observability</h3>
             <p class="project-card__desc" data-i18n="project.obs.desc">
@@ -505,8 +570,10 @@
               traces.
             </p>
             <div class="project-card__tech">
-              <span>C#</span><span>.NET 8.0+</span><span>OpenTelemetry</span
-              ><span>NuGet</span>
+              <span>C#</span>
+              <span>.NET 8.0+</span>
+              <span>OpenTelemetry</span>
+              <span>NuGet</span>
             </div>
           </a>
           <a
@@ -516,9 +583,9 @@
             class="project-card"
           >
             <div class="project-card__header">
-              <span class="project-card__tag" data-i18n="project.eslint.tag"
-                >Ferramenta</span
-              >
+              <span class="project-card__tag" data-i18n="project.eslint.tag">
+                Ferramenta
+              </span>
             </div>
             <h3 class="project-card__title">@tooark/eslint</h3>
             <p class="project-card__desc" data-i18n="project.eslint.desc">
@@ -526,7 +593,9 @@
               Angular e Vue.
             </p>
             <div class="project-card__tech">
-              <span>JavaScript</span><span>ESLint</span><span>NPM</span>
+              <span>JavaScript</span>
+              <span>ESLint</span>
+              <span>NPM</span>
             </div>
           </a>
           <a
@@ -536,9 +605,9 @@
             class="project-card"
           >
             <div class="project-card__header">
-              <span class="project-card__tag" data-i18n="project.base.tag"
-                >Infra</span
-              >
+              <span class="project-card__tag" data-i18n="project.base.tag">
+                Infra
+              </span>
             </div>
             <h3 class="project-card__title">Base Images</h3>
             <p class="project-card__desc" data-i18n="project.base.desc">
@@ -557,8 +626,9 @@
             rel="noopener"
             class="btn btn--outline"
             data-i18n="projects.more"
-            >Ver todos no GitHub</a
           >
+            Ver todos no GitHub
+          </a>
         </div>
       </div>
     </section>
@@ -581,9 +651,9 @@
             rel="noopener"
             class="sponsor-card sponsor-card--gh"
           >
-            <span class="sponsor-card__badge" data-i18n="sponsor.recommended"
-              >⭐ Recomendado</span
-            >
+            <span class="sponsor-card__badge" data-i18n="sponsor.recommended">
+              ⭐ Recomendado
+            </span>
             <svg
               class="sponsor-card__icon"
               viewBox="0 0 16 16"
@@ -601,9 +671,9 @@
             </p>
             <div class="sponsor-card__meta">
               <span class="sponsor-card__tag">USD</span>
-              <span class="sponsor-card__tag" data-i18n="sponsor.gh.tag"
-                >🌍 Internacional</span
-              >
+              <span class="sponsor-card__tag" data-i18n="sponsor.gh.tag">
+                🌍 Internacional
+              </span>
             </div>
           </a>
 
@@ -629,9 +699,9 @@
             </p>
             <div class="sponsor-card__meta">
               <span class="sponsor-card__tag">USD/EUR</span>
-              <span class="sponsor-card__tag" data-i18n="sponsor.kofi.tag"
-                >☕ Pontual</span
-              >
+              <span class="sponsor-card__tag" data-i18n="sponsor.kofi.tag">
+                ☕ Pontual
+              </span>
             </div>
           </a>
 
@@ -663,12 +733,12 @@
                 tabindex="0"
                 aria-label="Chave Pix — passe o mouse para ver QR Code, clique para copiar"
               >
-                <code id="pixKeyValue"
-                  >906dc9f8-25ce-4961-ab99-fc39d0b16f39</code
-                >
-                <span class="pix-key__hint" data-i18n="sponsor.pix.hint"
-                  >🖱️ Hover para QR · clique para copiar</span
-                >
+                <code id="pixKeyValue">
+                  906dc9f8-25ce-4961-ab99-fc39d0b16f39
+                </code>
+                <span class="pix-key__hint" data-i18n="sponsor.pix.hint">
+                  🖱️ Hover para QR · clique para copiar
+                </span>
                 <div class="pix-popover" id="pixPopover" role="tooltip">
                   <img
                     src="./media/pix-qr.png"
@@ -701,9 +771,9 @@
 
             <div class="sponsor-card__meta">
               <span class="sponsor-card__tag">BRL</span>
-              <span class="sponsor-card__tag" data-i18n="sponsor.pix.tag"
-                >🇧🇷 Brasil</span
-              >
+              <span class="sponsor-card__tag" data-i18n="sponsor.pix.tag">
+                🇧🇷 Brasil
+              </span>
             </div>
           </div>
         </div>

@@ -2,10 +2,14 @@ const translations = {
   pt: {
     "header.languageSelector": "Selecionar idioma",
     "a11y.skipLink": "Pular para o conteúdo",
+
+    // Nav
     "nav.about": "Sobre",
     "nav.skills": "Skills",
     "nav.projects": "Projetos",
     "nav.contact": "Contato",
+
+    // Hero
     "nav.sponsor": "💖 Apoiar",
     "hero.greeting": "Olá, eu sou",
     "hero.role": "Software Developer & DevOps",
@@ -27,10 +31,14 @@ const translations = {
     "about.p3.start": "Se algum dos projetos te ajudou de alguma forma, considere",
     "about.p3.link": "apoiar meu trabalho",
     "about.p3.end": ". Cada apoio ajuda a manter o ecossistema crescendo. 💚",
+
+    // Stats
     "stat.repos": "Repositórios",
     "stat.downloads": "Downloads NuGet",
     "stat.packages": "Pacotes .NET",
     "stat.tooark": "Repos Tooark",
+
+    // Skills
     "skills.title": "Skills & Tecnologias",
     "skill.backend": "Backend",
     "skill.devops": "DevOps & CI/CD",
@@ -38,6 +46,8 @@ const translations = {
     "skill.frontend": "Frontend",
     "skill.security": "Segurança",
     "skill.packages": "Pacotes & Libs",
+
+    // Projects
     "projects.title": "Projetos em Destaque",
     "project.tooark.tag": "Ecossistema",
     "project.tooark.desc": "Ecossistema com pacotes, ferramentas e projetos open source para desenvolvedores e DevOps. Inclui",
@@ -54,6 +64,8 @@ const translations = {
     "project.base.tag": "Infra",
     "project.base.desc": "Imagens Docker base otimizadas para deploy de aplicações em ambientes de produção.",
     "projects.more": "Ver todos no GitHub",
+
+    // Sponsor
     "sponsor.title": "Apoie meu trabalho",
     "sponsor.intro": "Se algum projeto te ajudou, considere apoiar. Cada contribuição me permite dedicar mais tempo ao open source, evoluindo as bibliotecas, respondendo issues e criando novas ferramentas para a comunidade.",
     "sponsor.recommended": "⭐ Recomendado",
@@ -71,20 +83,30 @@ const translations = {
     "sponsor.pix.notice": "🔐 Sempre compare a chave com o QR Code antes de transferir.",
     "sponsor.pix.tampered": "Chave possivelmente alterada — NÃO USE!",
     "sponsor.thanks": "Independente do valor ou da forma, muito obrigado pelo apoio! 💚",
+
+    // Contact
     "contact.title": "Contato",
     "contact.text": "Quer trocar uma ideia, colaborar em um projeto ou só dar um oi? Me encontre nas redes abaixo.",
+
+    // Footer
     "footer.rights": "Todos os direitos reservados.",
+
+    // Dynamic text helpers
     "downloads.thousand": "mil",
     "downloads.million": "milhão",
   },
   en: {
     "header.languageSelector": "Select language",
     "a11y.skipLink": "Skip to content",
+
+    // Nav
     "nav.about": "About",
     "nav.skills": "Skills",
     "nav.projects": "Projects",
     "nav.contact": "Contact",
     "nav.sponsor": "💖 Sponsor",
+
+    // Hero
     "hero.greeting": "Hi, I'm",
     "hero.role": "Software Developer & DevOps",
     "hero.badge": "🛠️ Founder and maintainer of",
@@ -93,6 +115,8 @@ const translations = {
     "hero.btn.projects": "View Projects",
     "hero.btn.contact": "Contact",
     "hero.btn.sponsor": "Sponsor me",
+
+    // About
     "about.title": "About me",
     "about.p1.start": "I'm a software developer with experience in",
     "about.p1.mid": "and",
@@ -105,10 +129,14 @@ const translations = {
     "about.p3.start": "If any of these projects helped you in any way, consider",
     "about.p3.link": "sponsoring my work",
     "about.p3.end": ". Every bit helps keep the ecosystem growing. 💚",
+
+    // Stats
     "stat.repos": "Repositories",
     "stat.downloads": "NuGet Downloads",
     "stat.packages": ".NET Packages",
     "stat.tooark": "Tooark Repos",
+
+    // Skills
     "skills.title": "Skills & Technologies",
     "skill.backend": "Backend",
     "skill.devops": "DevOps & CI/CD",
@@ -116,6 +144,8 @@ const translations = {
     "skill.frontend": "Frontend",
     "skill.security": "Security",
     "skill.packages": "Packages & Libs",
+
+    // Projects
     "projects.title": "Featured Projects",
     "project.tooark.tag": "Ecosystem",
     "project.tooark.desc": "Open source ecosystem with packages, tools and projects for developers and DevOps. Includes",
@@ -132,6 +162,8 @@ const translations = {
     "project.base.tag": "Infra",
     "project.base.desc": "Optimized base Docker images for deploying applications in production environments.",
     "projects.more": "View all on GitHub",
+
+    // Sponsor (new section)
     "sponsor.title": "Sponsor my work",
     "sponsor.intro": "If any of these projects helped you, consider sponsoring. Every contribution lets me dedicate more time to open source — evolving libraries, answering issues and building new tools for the community.",
     "sponsor.recommended": "⭐ Recommended",
@@ -149,9 +181,15 @@ const translations = {
     "sponsor.pix.notice": "🔐 Always compare the key with the QR Code before transferring.",
     "sponsor.pix.tampered": "Key possibly altered — DO NOT USE!",
     "sponsor.thanks": "Regardless of the amount or method, thank you so much for the support! 💚",
+
+    // Contact
     "contact.title": "Contact",
     "contact.text": "Want to chat, collaborate on a project, or just say hi? Find me on the networks below.",
+
+    // Footer
     "footer.rights": "All rights reserved.",
+
+    // Dynamic text helpers
     "downloads.thousand": "k",
     "downloads.million": "M",
   },

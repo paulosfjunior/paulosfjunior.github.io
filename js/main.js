@@ -153,7 +153,7 @@ function showToast (message, isDanger = false) {
 }
 
 // ===========================================================
-// 🔐 PIX SECURITY — Integrity verification (v4)
+// 🔐 PIX SECURITY — Integrity verification
 // ===========================================================
 // Hash SHA-256 da chave Pix esperada. Se a chave no DOM for alterada
 // por XSS ou qualquer outro vetor, a verificação falha e bloqueia o uso.

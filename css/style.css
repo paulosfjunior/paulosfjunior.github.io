@@ -1,5 +1,5 @@
 /* ========================================
-   Paulo Freitas — Professional Page v4
+   Paulo Freitas — Professional Page
    ======================================== */
 
 :root {
@@ -70,6 +70,7 @@ a:hover {
   padding: 0 24px;
 }
 
+/* ---- Background Canvas ---- */
 #bgCanvas {
   position: fixed;
   top: 0;
@@ -77,7 +78,7 @@ a:hover {
   width: 100vw;
   height: 100vh;
   z-index: 0;
-  opacity: 0.45;
+  opacity: 0.3;
   pointer-events: none;
 }
 
@@ -89,6 +90,7 @@ a:hover {
   z-index: 1;
 }
 
+/* ---- Skip link ---- */
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -105,6 +107,7 @@ a:hover {
   font-weight: 700;
 }
 
+/* ---- Reduced motion ---- */
 @media (prefers-reduced-motion: reduce) {
 
   *,
@@ -123,6 +126,7 @@ a:hover {
   }
 }
 
+/* ---- Header ---- */
 .header {
   position: fixed;
   top: 0;
@@ -255,6 +259,7 @@ a:hover {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* ---- Hero ---- */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -371,6 +376,7 @@ a:hover {
   border: 3px solid var(--color-bg);
 }
 
+/* ---- Buttons ---- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -429,6 +435,7 @@ a:hover {
   flex-shrink: 0;
 }
 
+/* ---- Sections ---- */
 .section {
   padding: 96px 0;
 }
@@ -457,6 +464,7 @@ a:hover {
   margin: 16px auto 0;
 }
 
+/* ---- About ---- */
 .about__content {
   max-width: 720px;
   margin: 0 auto;
@@ -523,6 +531,7 @@ a:hover {
   color: var(--color-text-muted);
 }
 
+/* ---- Skills ---- */
 .skills__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -581,6 +590,7 @@ a:hover {
   line-height: 1.6;
 }
 
+/* ---- Projects ---- */
 .projects__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -662,6 +672,9 @@ a:hover {
   margin-top: 40px;
 }
 
+/* ====================================
+   💖 SPONSOR SECTION
+   ==================================== */
 .sponsor__intro {
   text-align: center;
   color: var(--color-text-muted);
@@ -758,6 +771,7 @@ a:hover {
   color: var(--color-text-muted);
 }
 
+/* Variantes de cor por plataforma */
 .sponsor-card--gh {
   background: linear-gradient(135deg, rgba(219, 97, 162, 0.12), rgba(22, 27, 34, 0.9));
   border-color: rgba(219, 97, 162, 0.4);
@@ -797,6 +811,7 @@ a:hover {
   color: var(--color-pix);
 }
 
+/* ---- Pix Key + QR Code Popover ---- */
 .pix-key-wrapper {
   width: 100%;
   margin: 12px 0 16px;
@@ -845,6 +860,7 @@ a:hover {
   font-style: italic;
 }
 
+/* QR Code popover */
 .pix-popover {
   position: absolute;
   bottom: calc(100% + 12px);
@@ -862,6 +878,7 @@ a:hover {
   min-width: 240px;
 }
 
+/* Trigger: hover ou focus na chave → mostra popover */
 .pix-key:hover .pix-popover,
 .pix-key:focus-visible .pix-popover,
 .pix-key.is-active .pix-popover {
@@ -904,6 +921,7 @@ a:hover {
   margin: 0;
 }
 
+/* Botão copiar */
 .pix-copy-btn {
   margin-top: 10px;
   width: 100%;
@@ -936,6 +954,7 @@ a:hover {
   font-size: 1rem;
 }
 
+/* ---- Toast ---- */
 .toast {
   position: fixed;
   bottom: 24px;
@@ -963,6 +982,7 @@ a:hover {
   background: var(--color-danger);
 }
 
+/* ---- Contact ---- */
 .contact__text {
   text-align: center;
   color: var(--color-text-muted);
@@ -1018,6 +1038,7 @@ a:hover {
   word-break: break-all;
 }
 
+/* ---- Footer ---- */
 .footer {
   border-top: 1px solid var(--color-border);
   padding: 32px 0;
@@ -1051,6 +1072,7 @@ a:hover {
   height: 40px;
 }
 
+/* ---- Responsive ---- */
 @media (max-width: 900px) {
   .hero__content {
     grid-template-columns: 1fr;
@@ -1114,7 +1136,7 @@ a:hover {
   }
 
   #bgCanvas {
-    opacity: 0.35;
+    opacity: 0.25;
   }
 }
 
@@ -1217,9 +1239,10 @@ a:hover {
   }
 
   #bgCanvas {
-    opacity: 0.25;
+    opacity: 0.2;
   }
 
+  /* No mobile o popover aparece em vez de tooltip — vira fullscreen-ish */
   .pix-popover {
     position: fixed;
     bottom: 50%;
@@ -1242,7 +1265,7 @@ a:hover {
 
 
 /* ====================================
-   🔐 Pix Security Notice (v4)
+   🔐 Pix Security Notice
    ==================================== */
 .pix-security-notice {
   font-size: 0.7rem;
