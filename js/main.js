@@ -143,12 +143,62 @@ async function fetchStats () {
 const toast = document.getElementById("toast");
 let toastTimer = null;
 
-function showToast (message) {
+function showToast (message, isDanger = false) {
   if (!toast) return;
   toast.textContent = message;
+  toast.classList.toggle("toast--danger", !!isDanger);
   toast.classList.add("show");
   if (toastTimer) clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove("show"), 2500);
+  toastTimer = setTimeout(() => toast.classList.remove("show"), isDanger ? 6000 : 2500);
+}
+
+// ===========================================================
+// 🔐 PIX SECURITY — Integrity verification (v4)
+// ===========================================================
+// Hash SHA-256 da chave Pix esperada. Se a chave no DOM for alterada
+// por XSS ou qualquer outro vetor, a verificação falha e bloqueia o uso.
+const EXPECTED_PIX_HASH = "86446fc6a3bb1ced110d1b52b4f355d8b474361a7cdb4023b05a1d420412e20e";
+
+async function sha256 (text) {
+  const buffer = new TextEncoder().encode(text);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", buffer);
+  return Array.from(new Uint8Array(hashBuffer))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+let pixIntegrityOk = false;
+
+async function verifyPixIntegrity () {
+  const el = document.getElementById("pixKeyValue");
+  if (!el) return false;
+  const key = el.textContent.trim();
+  try {
+    const hash = await sha256(key);
+    pixIntegrityOk = hash === EXPECTED_PIX_HASH;
+
+    if (!pixIntegrityOk) {
+      console.error("[SECURITY] Pix key integrity check FAILED. Possible tampering detected.");
+      const pixKeyEl = document.getElementById("pixKey");
+      const pixBtn = document.getElementById("pixCopyBtn");
+      const pixCard = document.getElementById("pixCard");
+
+      if (pixKeyEl) pixKeyEl.classList.add("is-tampered");
+      if (pixBtn) {
+        pixBtn.disabled = true;
+        pixBtn.textContent = "❌ " + t("sponsor.pix.tampered");
+      }
+      // Esconde o QR popover (não confiável tbm)
+      const popover = document.getElementById("pixPopover");
+      if (popover) popover.style.display = "none";
+
+      showToast("⚠️ " + t("sponsor.pix.tampered"), true);
+    }
+    return pixIntegrityOk;
+  } catch (e) {
+    console.warn("[SECURITY] Could not verify Pix integrity:", e);
+    return false;
+  }
 }
 
 // ---- Pix interactions ---------------------
@@ -158,12 +208,21 @@ const pixCopyBtn = document.getElementById("pixCopyBtn");
 
 async function copyPixKey () {
   if (!pixKeyValue) return;
+
+  // 🔐 Verifica integridade SEMPRE antes de copiar
+  if (!pixIntegrityOk) {
+    await verifyPixIntegrity();
+    if (!pixIntegrityOk) {
+      showToast("⚠️ " + t("sponsor.pix.tampered"), true);
+      return;
+    }
+  }
+
   const value = pixKeyValue.textContent.trim();
   try {
     await navigator.clipboard.writeText(value);
     showToast(t("sponsor.pix.copied"));
   } catch (err) {
-    // Fallback para navegadores que não suportam Clipboard API
     const ta = document.createElement("textarea");
     ta.value = value;
     ta.style.position = "fixed";
@@ -180,23 +239,17 @@ async function copyPixKey () {
   }
 }
 
-// Click na chave copia
 if (pixKey) {
   pixKey.addEventListener("click", (e) => {
-    // se clicou dentro do popover, ignora
     if (e.target.closest(".pix-popover")) return;
     copyPixKey();
   });
-
-  // Acessibilidade: Enter/Espaço também copia
   pixKey.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       copyPixKey();
     }
   });
-
-  // Em mobile, primeiro tap mostra QR, segundo copia
   pixKey.addEventListener("touchend", (e) => {
     if (!pixKey.classList.contains("is-active")) {
       e.preventDefault();
@@ -206,7 +259,6 @@ if (pixKey) {
   }, { passive: false });
 }
 
-// Botão dedicado de copiar
 if (pixCopyBtn) {
   pixCopyBtn.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -214,7 +266,6 @@ if (pixCopyBtn) {
   });
 }
 
-// Fecha popover ao clicar fora (mobile)
 document.addEventListener("click", (e) => {
   if (pixKey && !pixKey.contains(e.target)) {
     pixKey.classList.remove("is-active");
@@ -229,3 +280,10 @@ if (year) year.textContent = new Date().getFullYear().toString();
 applyTranslations();
 applyStats(FALLBACK_STATS);
 fetchStats();
+
+// 🔐 Verifica integridade da chave Pix ASSIM que a página carrega
+// Se alguém alterar a chave via XSS, o site detecta automaticamente
+verifyPixIntegrity();
+
+// E continua verificando a cada 5s (proteção contra XSS tardio)
+setInterval(verifyPixIntegrity, 5000);

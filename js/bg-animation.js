@@ -34,7 +34,6 @@
   ctx.fillRect(0, 0, w, h);
 
   function Line () { this.reset(); }
-
   Line.prototype.reset = function () {
     this.x = 0; this.y = 0; this.addedX = 0; this.addedY = 0; this.rad = 0;
     this.lightInputMultiplier = opts.baseLightInputMultiplier + opts.addedLightInputMultiplier * Math.random();
@@ -42,7 +41,6 @@
     this.cumulativeTime = 0;
     this.beginPhase();
   };
-
   Line.prototype.beginPhase = function () {
     this.x += this.addedX; this.y += this.addedY;
     this.time = 0;
@@ -53,7 +51,6 @@
       this.reset();
     }
   };
-
   Line.prototype.step = function () {
     ++this.time; ++this.cumulativeTime;
     if (this.time >= this.targetTime) this.beginPhase();
@@ -106,6 +103,5 @@
       isPaused = false; loop();
     }
   });
-
   loop();
 })();

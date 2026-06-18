@@ -1,5 +1,5 @@
 /* ========================================
-   Paulo Freitas — Professional Page v3
+   Paulo Freitas — Professional Page v4
    ======================================== */
 
 :root {
@@ -17,6 +17,7 @@
   --color-kofi: #ff5e5b;
   --color-pix: #32BCAD;
   --color-pix-hover: #2da597;
+  --color-danger: #ef4444;
   --color-white: #fff;
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --container-max: 1100px;
@@ -69,7 +70,6 @@ a:hover {
   padding: 0 24px;
 }
 
-/* ---- Background Canvas ---- */
 #bgCanvas {
   position: fixed;
   top: 0;
@@ -77,7 +77,7 @@ a:hover {
   width: 100vw;
   height: 100vh;
   z-index: 0;
-  opacity: 0.3;
+  opacity: 0.45;
   pointer-events: none;
 }
 
@@ -89,7 +89,6 @@ a:hover {
   z-index: 1;
 }
 
-/* ---- Skip link ---- */
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -106,7 +105,6 @@ a:hover {
   font-weight: 700;
 }
 
-/* ---- Reduced motion ---- */
 @media (prefers-reduced-motion: reduce) {
 
   *,
@@ -125,7 +123,6 @@ a:hover {
   }
 }
 
-/* ---- Header ---- */
 .header {
   position: fixed;
   top: 0;
@@ -258,7 +255,6 @@ a:hover {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* ---- Hero ---- */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -352,10 +348,7 @@ a:hover {
   height: 460px;
   border-radius: 50%;
   padding: 5px;
-  background: conic-gradient(from 0deg,
-      var(--color-primary), var(--color-accent),
-      var(--color-primary), var(--color-accent),
-      var(--color-primary));
+  background: conic-gradient(from 0deg, var(--color-primary), var(--color-accent), var(--color-primary), var(--color-accent), var(--color-primary));
   box-shadow: 0 0 40px rgba(249, 115, 22, 0.2), 0 0 80px rgba(249, 115, 22, 0.08);
 }
 
@@ -378,7 +371,6 @@ a:hover {
   border: 3px solid var(--color-bg);
 }
 
-/* ---- Buttons ---- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -437,7 +429,6 @@ a:hover {
   flex-shrink: 0;
 }
 
-/* ---- Sections ---- */
 .section {
   padding: 96px 0;
 }
@@ -466,7 +457,6 @@ a:hover {
   margin: 16px auto 0;
 }
 
-/* ---- About ---- */
 .about__content {
   max-width: 720px;
   margin: 0 auto;
@@ -533,7 +523,6 @@ a:hover {
   color: var(--color-text-muted);
 }
 
-/* ---- Skills ---- */
 .skills__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -592,7 +581,6 @@ a:hover {
   line-height: 1.6;
 }
 
-/* ---- Projects ---- */
 .projects__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -674,9 +662,6 @@ a:hover {
   margin-top: 40px;
 }
 
-/* ====================================
-   💖 SPONSOR SECTION
-   ==================================== */
 .sponsor__intro {
   text-align: center;
   color: var(--color-text-muted);
@@ -773,7 +758,6 @@ a:hover {
   color: var(--color-text-muted);
 }
 
-/* Variantes de cor por plataforma */
 .sponsor-card--gh {
   background: linear-gradient(135deg, rgba(219, 97, 162, 0.12), rgba(22, 27, 34, 0.9));
   border-color: rgba(219, 97, 162, 0.4);
@@ -813,7 +797,6 @@ a:hover {
   color: var(--color-pix);
 }
 
-/* ---- Pix Key + QR Code Popover ---- */
 .pix-key-wrapper {
   width: 100%;
   margin: 12px 0 16px;
@@ -862,7 +845,6 @@ a:hover {
   font-style: italic;
 }
 
-/* QR Code popover */
 .pix-popover {
   position: absolute;
   bottom: calc(100% + 12px);
@@ -880,7 +862,6 @@ a:hover {
   min-width: 240px;
 }
 
-/* Trigger: hover ou focus na chave → mostra popover */
 .pix-key:hover .pix-popover,
 .pix-key:focus-visible .pix-popover,
 .pix-key.is-active .pix-popover {
@@ -923,7 +904,6 @@ a:hover {
   margin: 0;
 }
 
-/* Botão copiar */
 .pix-copy-btn {
   margin-top: 10px;
   width: 100%;
@@ -956,7 +936,6 @@ a:hover {
   font-size: 1rem;
 }
 
-/* ---- Toast ---- */
 .toast {
   position: fixed;
   bottom: 24px;
@@ -980,7 +959,10 @@ a:hover {
   opacity: 1;
 }
 
-/* ---- Contact ---- */
+.toast.toast--danger {
+  background: var(--color-danger);
+}
+
 .contact__text {
   text-align: center;
   color: var(--color-text-muted);
@@ -1036,7 +1018,6 @@ a:hover {
   word-break: break-all;
 }
 
-/* ---- Footer ---- */
 .footer {
   border-top: 1px solid var(--color-border);
   padding: 32px 0;
@@ -1070,7 +1051,6 @@ a:hover {
   height: 40px;
 }
 
-/* ---- Responsive ---- */
 @media (max-width: 900px) {
   .hero__content {
     grid-template-columns: 1fr;
@@ -1134,7 +1114,7 @@ a:hover {
   }
 
   #bgCanvas {
-    opacity: 0.25;
+    opacity: 0.35;
   }
 }
 
@@ -1237,10 +1217,9 @@ a:hover {
   }
 
   #bgCanvas {
-    opacity: 0.2;
+    opacity: 0.25;
   }
 
-  /* No mobile o popover aparece em vez de tooltip — vira fullscreen-ish */
   .pix-popover {
     position: fixed;
     bottom: 50%;
@@ -1259,4 +1238,51 @@ a:hover {
   .pix-popover::after {
     display: none;
   }
+}
+
+
+/* ====================================
+   🔐 Pix Security Notice (v4)
+   ==================================== */
+.pix-security-notice {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  margin-top: 8px;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* Estado de violação detectada (chave alterada por XSS) */
+.pix-key.is-tampered {
+  border-color: #ef4444 !important;
+  background: rgba(239, 68, 68, 0.1) !important;
+  animation: pulse-danger 1.5s ease-in-out infinite;
+}
+
+.pix-key.is-tampered code {
+  color: #ef4444 !important;
+}
+
+@keyframes pulse-danger {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+  }
+}
+
+.pix-copy-btn:disabled {
+  background: #6b7280 !important;
+  cursor: not-allowed !important;
+  opacity: 0.6;
+}
+
+.pix-copy-btn:disabled:hover {
+  background: #6b7280 !important;
+  transform: none !important;
 }
