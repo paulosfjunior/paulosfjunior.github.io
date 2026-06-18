@@ -1,6 +1,6 @@
 /* ========================================
    Paulo Freitas — Professional Page
-   Modern, responsive CSS
+   Modern, responsive CSS — with bg canvas
    ======================================== */
 
 :root {
@@ -13,6 +13,8 @@
   --color-primary: #f97316;
   --color-primary-hover: #fb923c;
   --color-accent: #3b82f6;
+  --color-sponsor: #db61a2;
+  --color-sponsor-hover: #c5408a;
   --color-white: #fff;
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --container-max: 1100px;
@@ -32,14 +34,17 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  background-color: var(--color-bg);
+  /* fallback se canvas falhar */
 }
 
 body {
-  background-color: var(--color-bg);
+  background-color: transparent;
   color: var(--color-text);
   font-family: var(--font-family);
   font-size: 16px;
   line-height: 1.6;
+  position: relative;
 }
 
 img {
@@ -61,6 +66,62 @@ a:hover {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 24px;
+}
+
+/* ---- 🎨 Background Canvas ---- */
+#bgCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  opacity: 0.20;
+  pointer-events: none;
+}
+
+.header,
+.hero,
+.section,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- A11y: skip link ---- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 9999;
+}
+
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+  background: var(--color-primary);
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  #bgCanvas {
+    display: none;
+  }
 }
 
 /* ---- Header ---- */
@@ -101,7 +162,8 @@ a:hover {
 .nav__menu {
   display: flex;
   list-style: none;
-  gap: 32px;
+  gap: 28px;
+  align-items: center;
 }
 
 .nav__item {
@@ -119,6 +181,15 @@ a:hover {
 
 .nav__link:hover {
   color: var(--color-text);
+}
+
+.nav__link--sponsor {
+  color: var(--color-sponsor) !important;
+  font-weight: 600;
+}
+
+.nav__link--sponsor:hover {
+  color: #f17fc0 !important;
 }
 
 .lang-switch {
@@ -220,7 +291,40 @@ a:hover {
   font-size: 1.35rem;
   color: var(--color-text-muted);
   font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.18), rgba(59, 130, 246, 0.12));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  padding: 8px 16px;
+  border-radius: 999px;
   margin-bottom: 20px;
+  transition: all var(--transition);
+  width: fit-content;
+}
+
+.hero__badge:hover {
+  border-color: rgba(249, 115, 22, 0.5);
+  transform: translateY(-1px);
+}
+
+.hero__badge a {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero__badge a:hover {
+  color: var(--color-primary-hover);
 }
 
 .hero__description {
@@ -282,6 +386,7 @@ a:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   padding: 12px 28px;
   font-size: 0.95rem;
   font-weight: 600;
@@ -305,9 +410,11 @@ a:hover {
 }
 
 .btn--outline {
-  background: transparent;
+  background: rgba(13, 17, 23, 0.5);
   color: var(--color-text);
   border-color: var(--color-border);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .btn--outline:hover {
@@ -315,13 +422,35 @@ a:hover {
   color: var(--color-primary);
 }
 
+.btn--sponsor {
+  background: var(--color-sponsor);
+  color: #fff;
+  border-color: var(--color-sponsor);
+}
+
+.btn--sponsor:hover {
+  background: var(--color-sponsor-hover);
+  border-color: var(--color-sponsor-hover);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(219, 97, 162, 0.3);
+}
+
+.btn--sponsor svg {
+  flex-shrink: 0;
+}
+
 /* ---- Sections ---- */
 .section {
   padding: 96px 0;
 }
 
+/* Sections com fundo "alternado" — agora semi-transparente
+   pra que o canvas apareça sutilmente atrás */
 .section--alt {
-  background: var(--color-bg-alt);
+  background: rgba(22, 27, 34, 0.85);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 .section__title {
@@ -359,6 +488,33 @@ a:hover {
   color: var(--color-primary);
 }
 
+.about__sponsor-cta {
+  margin-top: 24px !important;
+  margin-bottom: 24px !important;
+  padding: 20px 24px;
+  background: linear-gradient(135deg, rgba(219, 97, 162, 0.12), rgba(249, 115, 22, 0.08));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(219, 97, 162, 0.25);
+  border-radius: var(--radius);
+  text-align: center;
+  font-size: 1rem;
+  color: var(--color-text) !important;
+}
+
+.about__sponsor-link {
+  color: var(--color-sponsor) !important;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition);
+}
+
+.about__sponsor-link:hover {
+  color: #f17fc0 !important;
+  border-bottom-color: #f17fc0;
+}
+
 .about__stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -392,7 +548,10 @@ a:hover {
 .skill-card {
   position: relative;
   overflow: hidden;
-  background: var(--color-surface);
+  background: rgba(28, 35, 51, 0.85);
+  /* semi-transparente pro canvas */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 32px 24px;
@@ -408,16 +567,17 @@ a:hover {
 
 .skill-card:hover .skill-card__bg {
   filter: blur(3px);
+  opacity: 0.18;
 }
 
 .skill-card__bg {
   position: absolute;
   top: -10%;
-  left: 54%;
-  width: 75%;
-  opacity: 0.1;
+  right: -10%;
+  width: 60%;
+  opacity: 0.12;
   pointer-events: none;
-  filter: blur(0);
+  transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
 .skill-card__content {
@@ -446,7 +606,9 @@ a:hover {
 }
 
 .project-card {
-  background: var(--color-bg-alt);
+  background: rgba(22, 27, 34, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 28px 24px;
@@ -465,7 +627,7 @@ a:hover {
 
 .project-card--featured {
   grid-column: span 3;
-  background: linear-gradient(135deg, var(--color-surface), rgba(249, 115, 22, 0.07));
+  background: linear-gradient(135deg, rgba(28, 35, 51, 0.85), rgba(249, 115, 22, 0.12));
   border-color: rgba(249, 115, 22, 0.3);
 }
 
@@ -507,7 +669,7 @@ a:hover {
 .project-card__tech span {
   font-size: 0.75rem;
   padding: 4px 10px;
-  background: var(--color-bg);
+  background: rgba(13, 17, 23, 0.7);
   border: 1px solid var(--color-border);
   border-radius: 20px;
   color: var(--color-text-muted);
@@ -529,9 +691,9 @@ a:hover {
 
 .contact__links {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -541,7 +703,9 @@ a:hover {
   align-items: center;
   gap: 10px;
   padding: 28px 16px;
-  background: var(--color-surface);
+  background: rgba(28, 35, 51, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   text-align: center;
@@ -572,10 +736,26 @@ a:hover {
   word-break: break-all;
 }
 
+.contact-card--sponsor {
+  background: linear-gradient(135deg, rgba(219, 97, 162, 0.12), rgba(28, 35, 51, 0.85));
+  border-color: rgba(219, 97, 162, 0.3);
+}
+
+.contact-card--sponsor:hover {
+  border-color: var(--color-sponsor);
+}
+
+.contact-card--sponsor .contact-card__icon {
+  color: var(--color-sponsor);
+}
+
 /* ---- Footer ---- */
 .footer {
   border-top: 1px solid var(--color-border);
   padding: 32px 0;
+  background: rgba(13, 17, 23, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .footer__content {
@@ -627,6 +807,11 @@ a:hover {
     justify-content: center;
   }
 
+  .hero__badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .hero__name {
     font-size: 2.5rem;
   }
@@ -653,7 +838,12 @@ a:hover {
   }
 
   .contact__links {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Em telas menores, opacidade do canvas reduzida pra menos distração */
+  #bgCanvas {
+    opacity: 0.35;
   }
 }
 
@@ -685,11 +875,15 @@ a:hover {
     order: 3;
   }
 
+  .nav__item--lang {
+    order: 4;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
   .lang-switch {
-    order: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-left: 0;
   }
 
@@ -705,6 +899,11 @@ a:hover {
 
   .hero__role {
     font-size: 1.1rem;
+  }
+
+  .hero__badge {
+    font-size: 0.85rem;
+    padding: 6px 14px;
   }
 
   .hero__avatar-ring {
@@ -735,6 +934,11 @@ a:hover {
     gap: 16px;
   }
 
+  .about__sponsor-cta {
+    padding: 16px 20px;
+    font-size: 0.95rem;
+  }
+
   .stat__number {
     font-size: 1.5rem;
   }
@@ -743,5 +947,10 @@ a:hover {
     flex-direction: column;
     gap: 8px;
     text-align: center;
+  }
+
+  /* Mobile: opacidade ainda menor pra economizar bateria visualmente */
+  #bgCanvas {
+    opacity: 0.25;
   }
 }

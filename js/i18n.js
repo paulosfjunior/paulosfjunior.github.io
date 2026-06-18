@@ -1,6 +1,7 @@
 const translations = {
   pt: {
     "header.languageSelector": "Selecionar idioma",
+    "a11y.skipLink": "Pular para o conteúdo",
 
     // Nav
     "nav.about": "Sobre",
@@ -9,14 +10,15 @@ const translations = {
     "nav.contact": "Contato",
 
     // Hero
+    "nav.sponsor": "💖 Apoiar",
     "hero.greeting": "Olá, eu sou",
     "hero.role": "Software Developer & DevOps",
-    "hero.description":
-      "Desenvolvedor de software apaixonado por DevOps e ferramentas open source. Criador do",
-    "hero.description.tooark":
-      "— um ecossistema de bibliotecas e ferramentas para desenvolvedores e DevOps.",
+    "hero.badge": "🛠️ Fundador e mantenedor da",
+    "hero.description": "Desenvolvedor de software apaixonado por DevOps e ferramentas open source. Construindo bibliotecas, ferramentas e templates que já somam mais de",
+    "hero.description.suffix": "downloads na comunidade.",
     "hero.btn.projects": "Ver Projetos",
     "hero.btn.contact": "Contato",
+    "hero.btn.sponsor": "Sponsor",
 
     // About
     "about.title": "Sobre mim",
@@ -24,11 +26,15 @@ const translations = {
     "about.p1.mid": "e práticas de",
     "about.p1.end": "Trabalho no",
     "about.p1.location": "em Pompeia, SP — Brasil.",
-    "about.p2.start": "Fundei o projeto",
-    "about.p2.mid":
-      ", onde mantenho bibliotecas open source, GitHub Actions, templates de CI/CD e ferramentas de observabilidade que já acumulam mais de",
+    "about.p2.start": "Sou fundador e mantenedor do",
+    "about.p2.mid": ", onde construo e mantenho bibliotecas open source, GitHub Actions, templates de CI/CD e ferramentas de observabilidade que já acumulam mais de",
     "about.p2.end": "downloads",
     "about.p2.suffix": "nos pacotes NuGet.",
+    "about.p3.start": "Se algum dos projetos te ajudou de alguma forma, considere",
+    "about.p3.link": "apoiar meu trabalho",
+    "about.p3.end": "no GitHub Sponsors. Cada apoio ajuda a manter o ecossistema crescendo. 💚",
+
+    // Stats
     "stat.repos": "Repositórios",
     "stat.downloads": "Downloads NuGet",
     "stat.packages": "Pacotes .NET",
@@ -46,32 +52,25 @@ const translations = {
     // Projects
     "projects.title": "Projetos em Destaque",
     "project.tooark.tag": "Ecossistema",
-    "project.tooark.desc":
-      "Ecossistema com pacotes, ferramentas e projetos open source para desenvolvedores e DevOps. Inclui",
-    "project.tooark.desc.mid":
-      "pacotes NuGet, GitHub Actions, templates CI/CD, libs de observabilidade e mais.",
+    "project.tooark.desc": "Ecossistema com pacotes, ferramentas e projetos open source para desenvolvedores e DevOps. Inclui",
+    "project.tooark.desc.mid": "pacotes NuGet, GitHub Actions, templates CI/CD, libs de observabilidade e mais.",
     "project.net.tag": "Biblioteca",
-    "project.net.desc":
-      "Biblioteca de ferramentas C# com validações, notificações, value objects, DTOs, entidades e utilitários.",
+    "project.net.desc": "Biblioteca de ferramentas C# com validações, notificações, value objects, DTOs, entidades e utilitários.",
     "project.net.downloads": "downloads.",
-    "project.trivy.tag": "CI/CD",
-    "project.trivy.desc":
-      "GitHub Action para criar resumos de scan de segurança de imagens Docker com Trivy.",
     "project.obs.tag": "Observabilidade",
-    "project.obs.desc":
-      "Biblioteca Node.js para pré-configuração do OpenTelemetry em aplicações backend.",
+    "project.obs.desc": "Pacote NuGet para integração simplificada de OpenTelemetry em aplicações .NET, com configuração automática de métricas, logs e traces.",
     "project.eslint.tag": "Ferramenta",
-    "project.eslint.desc":
-      "Configuração compartilhada de ESLint para projetos Node, React, Angular e Vue.",
+    "project.eslint.desc": "Configuração compartilhada de ESLint para projetos Node, React, Angular e Vue.",
     "project.base.tag": "Infra",
-    "project.base.desc":
-      "Imagens Docker base otimizadas para deploy de aplicações em ambientes de produção.",
+    "project.base.desc": "Imagens Docker base otimizadas para deploy de aplicações em ambientes de produção.",
     "projects.more": "Ver todos no GitHub",
+    "project.vscode.tag": "Ferramenta",
+    "project.vscode.desc": "Extensões publicadas no Visual Studio Marketplace e Open VSX, incluindo formatadores de código (Ark) e ferramenta de comparação visual de commits.",
+
 
     // Contact
     "contact.title": "Contato",
-    "contact.text":
-      "Quer trocar uma ideia, colaborar em um projeto ou só dar um oi? Me encontre nas redes abaixo.",
+    "contact.text": "Quer trocar uma ideia, colaborar em um projeto ou só dar um oi? Me encontre nas redes abaixo.",
 
     // Footer
     "footer.rights": "Todos os direitos reservados.",
@@ -80,25 +79,26 @@ const translations = {
     "downloads.thousand": "mil",
     "downloads.million": "milhão",
   },
-
   en: {
     "header.languageSelector": "Select language",
+    "a11y.skipLink": "Skip to content",
 
     // Nav
     "nav.about": "About",
     "nav.skills": "Skills",
     "nav.projects": "Projects",
     "nav.contact": "Contact",
+    "nav.sponsor": "💖 Sponsor",
 
     // Hero
     "hero.greeting": "Hi, I'm",
     "hero.role": "Software Developer & DevOps",
-    "hero.description":
-      "Software developer passionate about DevOps and open source tools. Creator of",
-    "hero.description.tooark":
-      "— an ecosystem of libraries and tools for developers and DevOps.",
+    "hero.badge": "🛠️ Founder and maintainer of",
+    "hero.description": "Software developer passionate about DevOps and open source. Building libraries, tools and templates with over",
+    "hero.description.suffix": "downloads across the community.",
     "hero.btn.projects": "View Projects",
     "hero.btn.contact": "Contact",
+    "hero.btn.sponsor": "Sponsor",
 
     // About
     "about.title": "About me",
@@ -106,11 +106,15 @@ const translations = {
     "about.p1.mid": "and",
     "about.p1.end": "practices. I work at",
     "about.p1.location": "in Pompeia, SP — Brazil.",
-    "about.p2.start": "I founded the",
-    "about.p2.mid":
-      "project, where I maintain open source libraries, GitHub Actions, CI/CD templates and observability tools with over",
+    "about.p2.start": "I'm the founder and maintainer of",
+    "about.p2.mid": ", where I build and maintain open source libraries, GitHub Actions, CI/CD templates and observability tools with over",
     "about.p2.end": "downloads",
-    "about.p2.suffix": "on NuGet packages.",
+    "about.p2.suffix": "across NuGet packages.",
+    "about.p3.start": "If any of these projects helped you in any way, consider",
+    "about.p3.link": "sponsoring my work",
+    "about.p3.end": "on GitHub Sponsors. Every bit helps keep the ecosystem growing. 💚",
+
+    // Stats
     "stat.repos": "Repositories",
     "stat.downloads": "NuGet Downloads",
     "stat.packages": ".NET Packages",
@@ -128,32 +132,24 @@ const translations = {
     // Projects
     "projects.title": "Featured Projects",
     "project.tooark.tag": "Ecosystem",
-    "project.tooark.desc":
-      "Open source ecosystem with packages, tools and projects for developers and DevOps. Includes",
-    "project.tooark.desc.mid":
-      "NuGet packages, GitHub Actions, CI/CD templates, observability libs and more.",
+    "project.tooark.desc": "Open source ecosystem with packages, tools and projects for developers and DevOps. Includes",
+    "project.tooark.desc.mid": "NuGet packages, GitHub Actions, CI/CD templates, observability libs and more.",
     "project.net.tag": "Library",
-    "project.net.desc":
-      "C# toolkit library with validations, notifications, value objects, DTOs, entities and utilities.",
+    "project.net.desc": "C# toolkit library with validations, notifications, value objects, DTOs, entities and utilities.",
     "project.net.downloads": "downloads.",
-    "project.trivy.tag": "CI/CD",
-    "project.trivy.desc":
-      "GitHub Action to create security scan summaries of Docker images with Trivy.",
     "project.obs.tag": "Observability",
-    "project.obs.desc":
-      "Node.js library for pre-configured OpenTelemetry in backend applications.",
+    "project.obs.desc": "NuGet package for simplified OpenTelemetry integration in .NET applications, with auto-configuration of metrics, logs and traces.",
     "project.eslint.tag": "Tool",
-    "project.eslint.desc":
-      "Shared ESLint configuration for Node, React, Angular and Vue projects.",
+    "project.eslint.desc": "Shared ESLint configuration for Node, React, Angular and Vue projects.",
     "project.base.tag": "Infra",
-    "project.base.desc":
-      "Optimized base Docker images for deploying applications in production environments.",
+    "project.base.desc": "Optimized base Docker images for deploying applications in production environments.",
     "projects.more": "View all on GitHub",
+    "project.vscode.tag": "Tool",
+    "project.vscode.desc": "Extensions published on Visual Studio Marketplace and Open VSX, including code formatters (Ark) and a visual commit comparison tool.",
 
     // Contact
     "contact.title": "Contact",
-    "contact.text":
-      "Want to chat, collaborate on a project, or just say hi? Find me on the networks below.",
+    "contact.text": "Want to chat, collaborate on a project, or just say hi? Find me on the networks below.",
 
     // Footer
     "footer.rights": "All rights reserved.",
@@ -166,71 +162,39 @@ const translations = {
 
 const savedLang = localStorage.getItem("lang");
 
-// ---- Language detection -------------
-/**
- * Usa preferência salva quando disponível; caso contrário, detecta o idioma do navegador.
- * @returns {"pt" | "en"}
- */
 function getInitialLang () {
-  // Verifica se o idioma salvo é válido
   if (savedLang === "pt" || savedLang === "en") {
-    return /** @type {"pt" | "en"} */ (savedLang);
+    return savedLang;
   }
-
   const browserLang = (navigator.language || "").toLowerCase();
   return browserLang.startsWith("pt") ? "pt" : "en";
 }
 
-/** @type {"pt" | "en"} */
 let currentLang = getInitialLang();
 
-// ---- Translation functions ----------
-/**
- * Recupera a tradução para uma chave específica com base no idioma atual.
- * @param {string} key
- */
 function t (key) {
-  // @ts-ignore
   return translations[currentLang]?.[key] || translations.pt[key] || key;
 }
 
-/**
- * Aplica as traduções a todos os elementos com atributos data-i18n.
- */
 function applyTranslations () {
   document.documentElement.lang = currentLang === "pt" ? "pt-BR" : "en";
 
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.getAttribute("data-i18n");
-
-    // Para elementos de texto, atualiza o conteúdo textual
-    if (key) {
-      el.textContent = t(key);
-    }
+    if (key) el.textContent = t(key);
   });
 
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
     const key = el.getAttribute("data-i18n-placeholder");
-
-    // Para elementos de input, atualiza o placeholder
-    if (key) {
-       /** @type {HTMLInputElement} */ (el).placeholder = t(key);
-    }
+    if (key) el.placeholder = t(key);
   });
 
   document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
     const key = el.getAttribute("data-i18n-aria-label");
-
-    // Para elementos com aria-label, atualiza o atributo
-    if (key) {
-      el.setAttribute("aria-label", t(key));
-    }
+    if (key) el.setAttribute("aria-label", t(key));
   });
 }
 
-/**
- * Atualiza o estado dos botões de troca de idioma para refletir o idioma atual.
- */
 function updateLanguageSwitch () {
   document.querySelectorAll(".lang-switch__btn").forEach((btn) => {
     const lang = btn.getAttribute("data-lang");
@@ -240,25 +204,16 @@ function updateLanguageSwitch () {
   });
 }
 
-/**
- * Define o idioma atual, salva a preferência e reaplica as traduções.
- * @param {"pt" | "en"} lang
- */
 function setLang (lang) {
   currentLang = lang;
   localStorage.setItem("lang", lang);
   applyTranslations();
   updateLanguageSwitch();
-
-  // Recarrega as estatísticas para atualizar os textos dinâmicos
-  if (typeof fetchStats === "function") {
-    fetchStats();
+  if (typeof applyStatsFromCache === "function") {
+    applyStatsFromCache();
   }
 }
 
-/**
- * Alterna o idioma entre Português e Inglês
- */
 function toggleLang () {
   setLang(currentLang === "pt" ? "en" : "pt");
 }
@@ -266,11 +221,7 @@ function toggleLang () {
 document.querySelectorAll(".lang-switch__btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     const lang = btn.getAttribute("data-lang");
-
-    // Verifica se o idioma é válido antes de aplicar a mudança
-    if (lang === "pt" || lang === "en") {
-      setLang(lang);
-    }
+    if (lang === "pt" || lang === "en") setLang(lang);
   });
 });
 
