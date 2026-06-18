@@ -1190,6 +1190,10 @@ a:hover {
     font-size: 1.1rem;
   }
 
+  .hero__actions {
+    flex-direction: column;
+  }
+
   .hero__badge {
     font-size: 0.85rem;
     padding: 6px 14px;
