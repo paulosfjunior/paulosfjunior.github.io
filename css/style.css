@@ -1,6 +1,5 @@
 /* ========================================
-   Paulo Freitas — Professional Page
-   Modern, responsive CSS — with bg canvas
+   Paulo Freitas — Professional Page v3
    ======================================== */
 
 :root {
@@ -15,6 +14,9 @@
   --color-accent: #3b82f6;
   --color-sponsor: #db61a2;
   --color-sponsor-hover: #c5408a;
+  --color-kofi: #ff5e5b;
+  --color-pix: #32BCAD;
+  --color-pix-hover: #2da597;
   --color-white: #fff;
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --container-max: 1100px;
@@ -35,7 +37,6 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   background-color: var(--color-bg);
-  /* fallback se canvas falhar */
 }
 
 body {
@@ -68,7 +69,7 @@ a:hover {
   padding: 0 24px;
 }
 
-/* ---- 🎨 Background Canvas ---- */
+/* ---- Background Canvas ---- */
 #bgCanvas {
   position: fixed;
   top: 0;
@@ -76,7 +77,7 @@ a:hover {
   width: 100vw;
   height: 100vh;
   z-index: 0;
-  opacity: 0.20;
+  opacity: 0.3;
   pointer-events: none;
 }
 
@@ -88,7 +89,7 @@ a:hover {
   z-index: 1;
 }
 
-/* ---- A11y: skip link ---- */
+/* ---- Skip link ---- */
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -162,7 +163,7 @@ a:hover {
 .nav__menu {
   display: flex;
   list-style: none;
-  gap: 28px;
+  gap: 24px;
   align-items: center;
 }
 
@@ -352,14 +353,10 @@ a:hover {
   border-radius: 50%;
   padding: 5px;
   background: conic-gradient(from 0deg,
-      var(--color-primary),
-      var(--color-accent),
-      var(--color-primary),
-      var(--color-accent),
+      var(--color-primary), var(--color-accent),
+      var(--color-primary), var(--color-accent),
       var(--color-primary));
-  box-shadow:
-    0 0 40px rgba(249, 115, 22, 0.2),
-    0 0 80px rgba(249, 115, 22, 0.08);
+  box-shadow: 0 0 40px rgba(249, 115, 22, 0.2), 0 0 80px rgba(249, 115, 22, 0.08);
 }
 
 .hero__avatar-ring::before {
@@ -445,8 +442,6 @@ a:hover {
   padding: 96px 0;
 }
 
-/* Sections com fundo "alternado" — agora semi-transparente
-   pra que o canvas apareça sutilmente atrás */
 .section--alt {
   background: rgba(22, 27, 34, 0.85);
   backdrop-filter: blur(2px);
@@ -549,7 +544,6 @@ a:hover {
   position: relative;
   overflow: hidden;
   background: rgba(28, 35, 51, 0.85);
-  /* semi-transparente pro canvas */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--color-border);
@@ -680,6 +674,312 @@ a:hover {
   margin-top: 40px;
 }
 
+/* ====================================
+   💖 SPONSOR SECTION
+   ==================================== */
+.sponsor__intro {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  max-width: 640px;
+  margin: 0 auto 48px;
+}
+
+.sponsor__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sponsor-card {
+  position: relative;
+  background: rgba(22, 27, 34, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.sponsor-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-primary);
+}
+
+.sponsor-card__badge {
+  position: absolute;
+  top: -12px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-sponsor));
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+.sponsor-card__icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 16px;
+  transition: transform var(--transition);
+}
+
+.sponsor-card:hover .sponsor-card__icon {
+  transform: scale(1.1);
+}
+
+.sponsor-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.sponsor-card__desc {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.sponsor-card__meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.sponsor-card__tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  background: rgba(13, 17, 23, 0.6);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text-muted);
+}
+
+/* Variantes de cor por plataforma */
+.sponsor-card--gh {
+  background: linear-gradient(135deg, rgba(219, 97, 162, 0.12), rgba(22, 27, 34, 0.9));
+  border-color: rgba(219, 97, 162, 0.4);
+}
+
+.sponsor-card--gh:hover {
+  border-color: var(--color-sponsor);
+}
+
+.sponsor-card--gh .sponsor-card__icon {
+  color: var(--color-sponsor);
+}
+
+.sponsor-card--kofi {
+  background: linear-gradient(135deg, rgba(255, 94, 91, 0.1), rgba(22, 27, 34, 0.9));
+  border-color: rgba(255, 94, 91, 0.3);
+}
+
+.sponsor-card--kofi:hover {
+  border-color: var(--color-kofi);
+}
+
+.sponsor-card--kofi .sponsor-card__icon {
+  color: var(--color-kofi);
+}
+
+.sponsor-card--pix {
+  background: linear-gradient(135deg, rgba(50, 188, 173, 0.1), rgba(22, 27, 34, 0.9));
+  border-color: rgba(50, 188, 173, 0.3);
+}
+
+.sponsor-card--pix:hover {
+  border-color: var(--color-pix);
+}
+
+.sponsor-card--pix .sponsor-card__icon {
+  color: var(--color-pix);
+}
+
+/* ---- Pix Key + QR Code Popover ---- */
+.pix-key-wrapper {
+  width: 100%;
+  margin: 12px 0 16px;
+}
+
+.pix-key-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pix-key {
+  position: relative;
+  background: rgba(13, 17, 23, 0.85);
+  border: 1px dashed var(--color-pix);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: all var(--transition);
+  outline: none;
+}
+
+.pix-key:hover,
+.pix-key:focus-visible {
+  background: rgba(50, 188, 173, 0.1);
+  border-style: solid;
+}
+
+.pix-key code {
+  display: block;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  font-size: 0.75rem;
+  color: var(--color-pix);
+  word-break: break-all;
+  font-weight: 600;
+}
+
+.pix-key__hint {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* QR Code popover */
+.pix-popover {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--color-pix);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  z-index: 50;
+  min-width: 240px;
+}
+
+/* Trigger: hover ou focus na chave → mostra popover */
+.pix-key:hover .pix-popover,
+.pix-key:focus-visible .pix-popover,
+.pix-key.is-active .pix-popover {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.pix-popover::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: #fff;
+}
+
+.pix-popover__qr {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 0 auto 10px;
+  border-radius: 4px;
+}
+
+.pix-popover__title {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0d1117;
+  margin: 0 0 4px;
+}
+
+.pix-popover__name {
+  text-align: center;
+  font-size: 0.7rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Botão copiar */
+.pix-copy-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px 12px;
+  background: var(--color-pix);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: var(--font-family);
+}
+
+.pix-copy-btn:hover {
+  background: var(--color-pix-hover);
+  transform: translateY(-1px);
+}
+
+.pix-copy-btn:active {
+  transform: translateY(0);
+}
+
+.sponsor__thanks {
+  text-align: center;
+  margin-top: 48px;
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+/* ---- Toast ---- */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  background: var(--color-pix);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
 /* ---- Contact ---- */
 .contact__text {
   text-align: center;
@@ -691,9 +991,9 @@ a:hover {
 
 .contact__links {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -734,19 +1034,6 @@ a:hover {
   font-size: 0.8rem;
   color: var(--color-text-muted);
   word-break: break-all;
-}
-
-.contact-card--sponsor {
-  background: linear-gradient(135deg, rgba(219, 97, 162, 0.12), rgba(28, 35, 51, 0.85));
-  border-color: rgba(219, 97, 162, 0.3);
-}
-
-.contact-card--sponsor:hover {
-  border-color: var(--color-sponsor);
-}
-
-.contact-card--sponsor .contact-card__icon {
-  color: var(--color-sponsor);
 }
 
 /* ---- Footer ---- */
@@ -838,12 +1125,16 @@ a:hover {
   }
 
   .contact__links {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Em telas menores, opacidade do canvas reduzida pra menos distração */
+  .sponsor__cards {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+
   #bgCanvas {
-    opacity: 0.35;
+    opacity: 0.25;
   }
 }
 
@@ -877,10 +1168,6 @@ a:hover {
 
   .nav__item--lang {
     order: 4;
-  }
-
-  .hero__actions {
-    flex-direction: column;
   }
 
   .lang-switch {
@@ -949,8 +1236,27 @@ a:hover {
     text-align: center;
   }
 
-  /* Mobile: opacidade ainda menor pra economizar bateria visualmente */
   #bgCanvas {
-    opacity: 0.25;
+    opacity: 0.2;
+  }
+
+  /* No mobile o popover aparece em vez de tooltip — vira fullscreen-ish */
+  .pix-popover {
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%) scale(0.9);
+    width: calc(100vw - 48px);
+    max-width: 320px;
+  }
+
+  .pix-key:hover .pix-popover,
+  .pix-key:focus-visible .pix-popover,
+  .pix-key.is-active .pix-popover {
+    transform: translate(-50%, 50%) scale(1);
+  }
+
+  .pix-popover::after {
+    display: none;
   }
 }

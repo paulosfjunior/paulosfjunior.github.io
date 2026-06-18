@@ -67,6 +67,22 @@ const translations = {
     "project.vscode.tag": "Ferramenta",
     "project.vscode.desc": "Extensões publicadas no Visual Studio Marketplace e Open VSX, incluindo formatadores de código (Ark) e ferramenta de comparação visual de commits.",
 
+    // Sponsor
+    "sponsor.title": "Apoie meu trabalho",
+    "sponsor.intro": "Se algum projeto te ajudou, considere apoiar. Cada contribuição me permite dedicar mais tempo ao open source, evoluindo as bibliotecas, respondendo issues e criando novas ferramentas para a comunidade.",
+    "sponsor.recommended": "⭐ Recomendado",
+    "sponsor.gh.desc": "Apoio mensal ou pontual. Ideal para devs e empresas que dependem dos projetos.",
+    "sponsor.gh.tag": "🌍 Internacional",
+    "sponsor.kofi.desc": "Pague um café pontual. Rápido, simples e sem cadastro complicado.",
+    "sponsor.kofi.tag": "☕ Pontual",
+    "sponsor.pix.desc": "Para apoiadores brasileiros. Instantâneo, sem taxas, qualquer valor.",
+    "sponsor.pix.tag": "🇧🇷 Brasil",
+    "sponsor.pix.label": "Chave Pix aleatória:",
+    "sponsor.pix.hint": "🖱️ Passe o mouse para ver QR Code · clique para copiar",
+    "sponsor.pix.qr.title": "Escaneie no app do seu banco",
+    "sponsor.pix.copy": "📋 Copiar chave",
+    "sponsor.pix.copied": "✅ Chave Pix copiada!",
+    "sponsor.thanks": "Independente do valor ou da forma, muito obrigado pelo apoio! 💚",
 
     // Contact
     "contact.title": "Contato",
@@ -146,6 +162,23 @@ const translations = {
     "projects.more": "View all on GitHub",
     "project.vscode.tag": "Tool",
     "project.vscode.desc": "Extensions published on Visual Studio Marketplace and Open VSX, including code formatters (Ark) and a visual commit comparison tool.",
+
+    // Sponsor (new section)
+    "sponsor.title": "Sponsor my work",
+    "sponsor.intro": "If any of these projects helped you, consider sponsoring. Every contribution lets me dedicate more time to open source — evolving libraries, answering issues and building new tools for the community.",
+    "sponsor.recommended": "⭐ Recommended",
+    "sponsor.gh.desc": "Monthly or one-time support. Ideal for devs and companies that rely on these projects.",
+    "sponsor.gh.tag": "🌍 Worldwide",
+    "sponsor.kofi.desc": "Buy me a coffee. Fast, simple, no complicated signup.",
+    "sponsor.kofi.tag": "☕ One-time",
+    "sponsor.pix.desc": "For Brazilian supporters. Instant, no fees, any amount.",
+    "sponsor.pix.tag": "🇧🇷 Brazil",
+    "sponsor.pix.label": "Random Pix key:",
+    "sponsor.pix.hint": "🖱️ Hover to see QR Code · click to copy",
+    "sponsor.pix.qr.title": "Scan in your banking app",
+    "sponsor.pix.copy": "📋 Copy key",
+    "sponsor.pix.copied": "✅ Pix key copied!",
+    "sponsor.thanks": "Regardless of the amount or method, thank you so much for the support! 💚",
 
     // Contact
     "contact.title": "Contact",
