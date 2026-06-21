@@ -15,8 +15,8 @@
   --color-sponsor: #db61a2;
   --color-sponsor-hover: #c5408a;
   --color-kofi: #ff5e5b;
-  --color-pix: #32BCAD;
-  --color-pix-hover: #2da597;
+  --color-paypal: #009cde;
+  --color-paypal-hover: #0079b6;
   --color-danger: #ef4444;
   --color-white: #fff;
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -798,153 +798,19 @@ a:hover {
   color: var(--color-kofi);
 }
 
-.sponsor-card--pix {
-  background: linear-gradient(135deg, rgba(50, 188, 173, 0.1), rgba(22, 27, 34, 0.9));
-  border-color: rgba(50, 188, 173, 0.3);
+.sponsor-card--paypal {
+  background: linear-gradient(135deg, rgba(0, 156, 222, 0.1), rgba(22, 27, 34, 0.9));
+  border-color: rgba(0, 156, 222, 0.3);
 }
 
-.sponsor-card--pix:hover {
-  border-color: var(--color-pix);
+.sponsor-card--paypal:hover {
+  border-color: var(--color-paypal);
 }
 
-.sponsor-card--pix .sponsor-card__icon {
-  color: var(--color-pix);
+.sponsor-card--paypal .sponsor-card__icon {
+  color: var(--color-paypal);
 }
 
-/* ---- Pix Key + QR Code Popover ---- */
-.pix-key-wrapper {
-  width: 100%;
-  margin: 12px 0 16px;
-}
-
-.pix-key-label {
-  display: block;
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-  margin-bottom: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.pix-key {
-  position: relative;
-  background: rgba(13, 17, 23, 0.85);
-  border: 1px dashed var(--color-pix);
-  border-radius: var(--radius-sm);
-  padding: 10px 12px;
-  cursor: pointer;
-  transition: all var(--transition);
-  outline: none;
-}
-
-.pix-key:hover,
-.pix-key:focus-visible {
-  background: rgba(50, 188, 173, 0.1);
-  border-style: solid;
-}
-
-.pix-key code {
-  display: block;
-  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-  font-size: 0.75rem;
-  color: var(--color-pix);
-  word-break: break-all;
-  font-weight: 600;
-}
-
-.pix-key__hint {
-  display: block;
-  font-size: 0.65rem;
-  color: var(--color-text-muted);
-  margin-top: 6px;
-  font-style: italic;
-}
-
-/* QR Code popover */
-.pix-popover {
-  position: absolute;
-  bottom: calc(100% + 12px);
-  left: 50%;
-  transform: translateX(-50%) translateY(8px);
-  background: #fff;
-  border-radius: var(--radius);
-  padding: 16px;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--color-pix);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
-  z-index: 50;
-  min-width: 240px;
-}
-
-/* Trigger: hover ou focus na chave → mostra popover */
-.pix-key:hover .pix-popover,
-.pix-key:focus-visible .pix-popover,
-.pix-key.is-active .pix-popover {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
-
-.pix-popover::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 8px solid transparent;
-  border-top-color: #fff;
-}
-
-.pix-popover__qr {
-  width: 200px;
-  height: 200px;
-  display: block;
-  margin: 0 auto 10px;
-  border-radius: 4px;
-}
-
-.pix-popover__title {
-  text-align: center;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #0d1117;
-  margin: 0 0 4px;
-}
-
-.pix-popover__name {
-  text-align: center;
-  font-size: 0.7rem;
-  color: #6b7280;
-  margin: 0;
-}
-
-/* Botão copiar */
-.pix-copy-btn {
-  margin-top: 10px;
-  width: 100%;
-  padding: 8px 12px;
-  background: var(--color-pix);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius-sm);
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition);
-  font-family: var(--font-family);
-}
-
-.pix-copy-btn:hover {
-  background: var(--color-pix-hover);
-  transform: translateY(-1px);
-}
-
-.pix-copy-btn:active {
-  transform: translateY(0);
-}
 
 .sponsor__thanks {
   text-align: center;
@@ -960,7 +826,7 @@ a:hover {
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%) translateY(120%);
-  background: var(--color-pix);
+  background: #22c55e;
   color: #fff;
   padding: 12px 24px;
   border-radius: var(--radius-sm);
@@ -1246,70 +1112,6 @@ a:hover {
     opacity: 0.2;
   }
 
-  /* No mobile o popover aparece em vez de tooltip — vira fullscreen-ish */
-  .pix-popover {
-    position: fixed;
-    bottom: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%) scale(0.9);
-    width: calc(100vw - 48px);
-    max-width: 320px;
-  }
-
-  .pix-key:hover .pix-popover,
-  .pix-key:focus-visible .pix-popover,
-  .pix-key.is-active .pix-popover {
-    transform: translate(-50%, 50%) scale(1);
-  }
-
-  .pix-popover::after {
-    display: none;
-  }
 }
 
 
-/* ====================================
-   🔐 Pix Security Notice
-   ==================================== */
-.pix-security-notice {
-  font-size: 0.7rem;
-  color: var(--color-text-muted);
-  margin-top: 8px;
-  text-align: center;
-  font-style: italic;
-  line-height: 1.4;
-}
-
-/* Estado de violação detectada (chave alterada por XSS) */
-.pix-key.is-tampered {
-  border-color: #ef4444 !important;
-  background: rgba(239, 68, 68, 0.1) !important;
-  animation: pulse-danger 1.5s ease-in-out infinite;
-}
-
-.pix-key.is-tampered code {
-  color: #ef4444 !important;
-}
-
-@keyframes pulse-danger {
-
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
-  }
-
-  50% {
-    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
-  }
-}
-
-.pix-copy-btn:disabled {
-  background: #6b7280 !important;
-  cursor: not-allowed !important;
-  opacity: 0.6;
-}
-
-.pix-copy-btn:disabled:hover {
-  background: #6b7280 !important;
-  transform: none !important;
-}

@@ -672,7 +672,7 @@
             <div class="sponsor-card__meta">
               <span class="sponsor-card__tag">USD</span>
               <span class="sponsor-card__tag" data-i18n="sponsor.gh.tag">
-                🌍 Internacional
+                🔁 Mensal ou pontual
               </span>
             </div>
           </a>
@@ -705,7 +705,13 @@
             </div>
           </a>
 
-          <div class="sponsor-card sponsor-card--pix" tabindex="0" id="pixCard">
+          <a
+            href="https://www.paypal.com/donate/?business=62KETU4PXBWZC&no_recurring=0&item_name=Ol%C3%A1%21+Sou+o+fundador+e+mantenedor+da+Tooark+%28tooark.com%29+%E2%80%94%0Aum+ecossistema+de+projetos+open+source.%0AObrigado+pelo+apoio%21+%F0%9F%92%9A&currency_code=BRL"
+            target="_blank"
+            rel="noopener"
+            class="sponsor-card sponsor-card--paypal"
+            id="paypalCard"
+          >
             <svg
               class="sponsor-card__icon"
               viewBox="0 0 24 24"
@@ -713,69 +719,21 @@
               aria-hidden="true"
             >
               <path
-                d="M5.283 18.36a3.505 3.505 0 0 0 2.493-1.032l3.6-3.6a.684.684 0 0 1 .946 0l3.613 3.613a3.504 3.504 0 0 0 2.493 1.032h.71l-4.56 4.56a3.647 3.647 0 0 1-5.156 0L4.85 18.36zM18.428 5.627a3.505 3.505 0 0 0-2.493 1.032l-3.613 3.614a.67.67 0 0 1-.946 0l-3.6-3.6A3.505 3.505 0 0 0 5.283 5.64h-.434l4.582-4.581a3.649 3.649 0 0 1 5.156 0l4.568 4.568zM1.068 9.422 3.79 6.699h1.492a2.483 2.483 0 0 1 1.744.722l3.6 3.6a1.73 1.73 0 0 0 2.443 0l3.614-3.613a2.482 2.482 0 0 1 1.744-.723h1.767l2.737 2.737a3.647 3.647 0 0 1 0 5.156l-2.737 2.736h-1.767a2.481 2.481 0 0 1-1.744-.722l-3.613-3.613a1.769 1.769 0 0 0-2.444 0l-3.6 3.6a2.483 2.483 0 0 1-1.744.722H3.791l-2.723-2.723a3.648 3.648 0 0 1 0-5.156"
+                d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"
               />
             </svg>
-            <h3 class="sponsor-card__title">Pix</h3>
-            <p class="sponsor-card__desc" data-i18n="sponsor.pix.desc">
-              Para apoiadores brasileiros. Instantâneo, sem taxas, qualquer
-              valor.
+            <h3 class="sponsor-card__title">PayPal</h3>
+            <p class="sponsor-card__desc" data-i18n="sponsor.paypal.desc">
+              Doe com PayPal. Rápido, seguro e aceito em todo o mundo.
             </p>
-
-            <div class="pix-key-wrapper">
-              <label class="pix-key-label" data-i18n="sponsor.pix.label"
-                >Chave Pix aleatória:</label
-              >
-              <div
-                class="pix-key"
-                id="pixKey"
-                role="button"
-                tabindex="0"
-                aria-label="Chave Pix — passe o mouse para ver QR Code, clique para copiar"
-              >
-                <code id="pixKeyValue">
-                  906dc9f8-25ce-4961-ab99-fc39d0b16f39
-                </code>
-                <span class="pix-key__hint" data-i18n="sponsor.pix.hint">
-                  🖱️ Hover para QR · clique para copiar
-                </span>
-                <div class="pix-popover" id="pixPopover" role="tooltip">
-                  <img
-                    src="./media/pix-qr.png"
-                    alt="QR Code Pix"
-                    class="pix-popover__qr"
-                  />
-                  <p
-                    class="pix-popover__title"
-                    data-i18n="sponsor.pix.qr.title"
-                  >
-                    Escaneie no app do seu banco
-                  </p>
-                  <p class="pix-popover__name">
-                    Paulo Freitas · Herculândia, SP
-                  </p>
-                </div>
-              </div>
-              <button
-                class="pix-copy-btn"
-                id="pixCopyBtn"
-                type="button"
-                data-i18n="sponsor.pix.copy"
-              >
-                📋 Copiar chave
-              </button>
-              <p class="pix-security-notice" data-i18n="sponsor.pix.notice">
-                🔐 Sempre compare a chave com o QR Code antes de transferir.
-              </p>
-            </div>
 
             <div class="sponsor-card__meta">
               <span class="sponsor-card__tag">BRL</span>
-              <span class="sponsor-card__tag" data-i18n="sponsor.pix.tag">
-                🇧🇷 Brasil
+              <span class="sponsor-card__tag" data-i18n="sponsor.paypal.tag">
+                🔁 Mensal ou pontual
               </span>
             </div>
-          </div>
+          </a>
         </div>
 
         <p class="sponsor__thanks" data-i18n="sponsor.thanks">
