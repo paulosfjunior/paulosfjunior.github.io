@@ -18,12 +18,12 @@ if (toggle && menu) {
 }
 
 // --- Dynamic Stats -------------------
-const STATS_CACHE_KEY = 'stats_cache_v2';
+const STATS_CACHE_KEY = 'stats_cache_v3';
 const STATS_TTL_MS = 6 * 60 * 60 * 1000;
 
 const FALLBACK_STATS = {
-  userRepos: 22,
   orgRepos: 19,
+  extensions: 5,
   packages: 13,
   downloads: 91759,
 };
@@ -69,10 +69,10 @@ function setText(id, value) {
 }
 
 function applyStats(d) {
-  if (typeof d.userRepos === 'number')
-    setText('stat-repos', formatRepos(d.userRepos, 5));
   if (typeof d.orgRepos === 'number')
     setText('stat-tooark-repos', formatRepos(d.orgRepos, 5));
+  if (typeof d.extensions === 'number')
+    setText('stat-extensions', d.extensions);
   if (typeof d.packages === 'number') {
     setText('stat-packages', d.packages);
     setText('tooark-packages', d.packages);
@@ -113,16 +113,31 @@ async function fetchStats() {
 
   const data = {};
   try {
-    const [userRes, orgRes, nugetRes] = await Promise.all([
-      fetch('https://api.github.com/users/paulosfjunior'),
+    const [orgRes, nugetRes, marketplaceRes] = await Promise.all([
       fetch('https://api.github.com/orgs/Tooark'),
       fetch('https://azuresearch-usnc.nuget.org/query?q=owner:Tooark&take=100'),
+      fetch(
+        'https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json;api-version=3.0-preview.1',
+          },
+          body: JSON.stringify({
+            filters: [
+              {
+                criteria: [{ filterType: 18, value: 'Tooark' }],
+                pageNumber: 1,
+                pageSize: 50,
+              },
+            ],
+            flags: 0,
+          }),
+        },
+      ),
     ]);
 
-    if (userRes.ok) {
-      const user = await userRes.json();
-      data.userRepos = user.public_repos;
-    }
     if (orgRes.ok) {
       const org = await orgRes.json();
       data.orgRepos = org.public_repos;
@@ -135,6 +150,13 @@ async function fetchStats() {
         (sum, pkg) => sum + (pkg.totalDownloads || 0),
         0,
       );
+    }
+    if (marketplaceRes.ok) {
+      const marketplace = await marketplaceRes.json();
+      const result = (marketplace.results && marketplace.results[0]) || {};
+      if (Array.isArray(result.extensions)) {
+        data.extensions = result.extensions.length;
+      }
     }
 
     try {

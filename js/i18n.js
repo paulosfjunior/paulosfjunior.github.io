@@ -36,7 +36,7 @@ const translations = {
     'about.p3.end': '. Cada apoio ajuda a manter o ecossistema crescendo. 💚',
 
     // Stats
-    'stat.repos': 'Repositórios',
+    'stat.extensions': 'Extensões VS Code',
     'stat.downloads': 'Downloads NuGet',
     'stat.packages': 'Pacotes .NET',
     'stat.tooark': 'Repos Tooark',
@@ -143,7 +143,7 @@ const translations = {
     'about.p3.end': '. Every bit helps keep the ecosystem growing. 💚',
 
     // Stats
-    'stat.repos': 'Repositories',
+    'stat.extensions': 'VS Code Extensions',
     'stat.downloads': 'NuGet Downloads',
     'stat.packages': '.NET Packages',
     'stat.tooark': 'Tooark Repos',

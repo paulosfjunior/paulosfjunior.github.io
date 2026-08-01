@@ -42,7 +42,7 @@ proxiada pela Cloudflare, os security headers devem ser aplicados na borda, com
 Valor completo (uma linha):
 
 ```txt
-default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://github.com https://avatars.githubusercontent.com; connect-src 'self' https://api.github.com https://azuresearch-usnc.nuget.org; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://github.com https://avatars.githubusercontent.com; connect-src 'self' https://api.github.com https://azuresearch-usnc.nuget.org https://marketplace.visualstudio.com; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
 ```
 
 Racional das origens permitidas (manter em sincronia com `js/main.js` e o
@@ -58,8 +58,9 @@ Racional das origens permitidas (manter em sincronia com `js/main.js` e o
 - **img-src**: avatar do GitHub (`github.com/paulosfjunior.png` redireciona
   para `avatars.githubusercontent.com`) e imagens `data:`.
 - **connect-src**: APIs consumidas pelo site — GitHub (`api.github.com`, stats
-  de repositórios) e NuGet (`azuresearch-usnc.nuget.org`, downloads dos
-  pacotes). **Ao adicionar uma nova API no JS, inclua a origem aqui e no CSP
+  de repositórios), NuGet (`azuresearch-usnc.nuget.org`, downloads dos
+  pacotes) e VS Code Marketplace (`marketplace.visualstudio.com`, contagem de
+  extensões). **Ao adicionar uma nova API no JS, inclua a origem aqui e no CSP
   do `index.html`.**
 - **form-action 'none'**: o site não possui formulários.
 
@@ -133,7 +134,7 @@ curl -X PUT \
             "X-Frame-Options": { "operation": "set", "value": "DENY" },
             "Referrer-Policy": { "operation": "set", "value": "strict-origin-when-cross-origin" },
             "Permissions-Policy": { "operation": "set", "value": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" },
-            "Content-Security-Policy-Report-Only": { "operation": "set", "value": "default-src '\''self'\''; script-src '\''self'\'' https://static.cloudflareinsights.com; style-src '\''self'\'' '\''unsafe-inline'\'' https://fonts.googleapis.com; font-src '\''self'\'' https://fonts.gstatic.com; img-src '\''self'\'' data: https://github.com https://avatars.githubusercontent.com; connect-src '\''self'\'' https://api.github.com https://azuresearch-usnc.nuget.org; object-src '\''none'\''; base-uri '\''self'\''; form-action '\''none'\''; frame-ancestors '\''none'\''; upgrade-insecure-requests" }
+            "Content-Security-Policy-Report-Only": { "operation": "set", "value": "default-src '\''self'\''; script-src '\''self'\'' https://static.cloudflareinsights.com; style-src '\''self'\'' '\''unsafe-inline'\'' https://fonts.googleapis.com; font-src '\''self'\'' https://fonts.gstatic.com; img-src '\''self'\'' data: https://github.com https://avatars.githubusercontent.com; connect-src '\''self'\'' https://api.github.com https://azuresearch-usnc.nuget.org https://marketplace.visualstudio.com; object-src '\''none'\''; base-uri '\''self'\''; form-action '\''none'\''; frame-ancestors '\''none'\''; upgrade-insecure-requests" }
           }
         }
       }
