@@ -13,7 +13,7 @@
   const ctx = canvas.getContext("2d");
 
   const opts = {
-    len: 20, count: 50, baseTime: 10, addedTime: 10,
+    len: 20, count: 50, baseTime: 1, addedTime: 10,
     dieChance: 0.05, spawnChance: 1, sparkChance: 0.1,
     sparkDist: 10, sparkSize: 2,
     color: "hsl(hue,100%,light%)",
