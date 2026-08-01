@@ -1,0 +1,23 @@
+{
+  "extends": ["html-validate:recommended"],
+  "rules": {
+    "long-title": [
+      "error",
+      {
+        "maxlength": 90
+      }
+    ],
+    "void-style": [
+      "error",
+      {
+        "style": "selfclosing"
+      }
+    ],
+    "doctype-style": [
+      "error",
+      {
+        "style": "lowercase"
+      }
+    ]
+  }
+}

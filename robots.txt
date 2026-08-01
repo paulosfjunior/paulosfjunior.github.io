@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://paulofreitas.tooark.com/sitemap.xml

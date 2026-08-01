@@ -56,9 +56,21 @@ typings/
 
 # dotenv environment variables file
 .env
+.env.*
 
 # next.js build output
 .next
 
 # virtualenv
 .venv
+
+# Metadados de editor/IDE
+.vscode/
+.idea/
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de configuração do Claude
+**/.claude/

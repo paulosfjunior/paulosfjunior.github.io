@@ -19,7 +19,8 @@
   --color-paypal-hover: #0079b6;
   --color-danger: #ef4444;
   --color-white: #fff;
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --container-max: 1100px;
   --radius: 12px;
   --radius-sm: 8px;
@@ -109,7 +110,6 @@ a:hover {
 
 /* ---- Reduced motion ---- */
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
@@ -303,7 +303,11 @@ a:hover {
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--color-text);
-  background: linear-gradient(135deg, rgba(249, 115, 22, 0.18), rgba(59, 130, 246, 0.12));
+  background: linear-gradient(
+    135deg,
+    rgba(249, 115, 22, 0.18),
+    rgba(59, 130, 246, 0.12)
+  );
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(249, 115, 22, 0.3);
@@ -353,12 +357,21 @@ a:hover {
   height: 460px;
   border-radius: 50%;
   padding: 5px;
-  background: conic-gradient(from 0deg, var(--color-primary), var(--color-accent), var(--color-primary), var(--color-accent), var(--color-primary));
-  box-shadow: 0 0 40px rgba(249, 115, 22, 0.2), 0 0 80px rgba(249, 115, 22, 0.08);
+  background: conic-gradient(
+    from 0deg,
+    var(--color-primary),
+    var(--color-accent),
+    var(--color-primary),
+    var(--color-accent),
+    var(--color-primary)
+  );
+  box-shadow:
+    0 0 40px rgba(249, 115, 22, 0.2),
+    0 0 80px rgba(249, 115, 22, 0.08);
 }
 
 .hero__avatar-ring::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 5px;
   border-radius: 50%;
@@ -455,7 +468,7 @@ a:hover {
 }
 
 .section__title::after {
-  content: '';
+  content: "";
   display: block;
   width: 60px;
   height: 3px;
@@ -485,7 +498,11 @@ a:hover {
   margin-top: 24px !important;
   margin-bottom: 24px !important;
   padding: 20px 24px;
-  background: linear-gradient(135deg, rgba(219, 97, 162, 0.12), rgba(249, 115, 22, 0.08));
+  background: linear-gradient(
+    135deg,
+    rgba(219, 97, 162, 0.12),
+    rgba(249, 115, 22, 0.08)
+  );
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(219, 97, 162, 0.25);
@@ -550,7 +567,9 @@ a:hover {
   min-height: 180px;
   display: flex;
   align-items: flex-end;
-  transition: border-color var(--transition), transform var(--transition);
+  transition:
+    border-color var(--transition),
+    transform var(--transition);
 }
 
 .skill-card:hover {
@@ -569,7 +588,9 @@ a:hover {
   width: 60%;
   opacity: 0.12;
   pointer-events: none;
-  transition: filter 0.3s ease, opacity 0.3s ease;
+  transition:
+    filter 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .skill-card__content {
@@ -606,7 +627,9 @@ a:hover {
   padding: 28px 24px;
   display: flex;
   flex-direction: column;
-  transition: border-color var(--transition), transform var(--transition);
+  transition:
+    border-color var(--transition),
+    transform var(--transition);
   color: var(--color-text);
   text-decoration: none;
 }
@@ -619,7 +642,11 @@ a:hover {
 
 .project-card--featured {
   grid-column: span 3;
-  background: linear-gradient(135deg, rgba(28, 35, 51, 0.85), rgba(249, 115, 22, 0.12));
+  background: linear-gradient(
+    135deg,
+    rgba(28, 35, 51, 0.85),
+    rgba(249, 115, 22, 0.12)
+  );
   border-color: rgba(249, 115, 22, 0.3);
 }
 
@@ -718,7 +745,11 @@ a:hover {
   position: absolute;
   top: -12px;
   right: 16px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-sponsor));
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-sponsor)
+  );
   color: #fff;
   font-size: 0.7rem;
   font-weight: 700;
@@ -773,7 +804,11 @@ a:hover {
 
 /* Variantes de cor por plataforma */
 .sponsor-card--gh {
-  background: linear-gradient(135deg, rgba(219, 97, 162, 0.12), rgba(22, 27, 34, 0.9));
+  background: linear-gradient(
+    135deg,
+    rgba(219, 97, 162, 0.12),
+    rgba(22, 27, 34, 0.9)
+  );
   border-color: rgba(219, 97, 162, 0.4);
 }
 
@@ -786,7 +821,11 @@ a:hover {
 }
 
 .sponsor-card--kofi {
-  background: linear-gradient(135deg, rgba(255, 94, 91, 0.1), rgba(22, 27, 34, 0.9));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 94, 91, 0.1),
+    rgba(22, 27, 34, 0.9)
+  );
   border-color: rgba(255, 94, 91, 0.3);
 }
 
@@ -799,7 +838,11 @@ a:hover {
 }
 
 .sponsor-card--paypal {
-  background: linear-gradient(135deg, rgba(0, 156, 222, 0.1), rgba(22, 27, 34, 0.9));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 156, 222, 0.1),
+    rgba(22, 27, 34, 0.9)
+  );
   border-color: rgba(0, 156, 222, 0.3);
 }
 
@@ -810,7 +853,6 @@ a:hover {
 .sponsor-card--paypal .sponsor-card__icon {
   color: var(--color-paypal);
 }
-
 
 .sponsor__thanks {
   text-align: center;
@@ -835,7 +877,9 @@ a:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   z-index: 9999;
   opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
   pointer-events: none;
 }
 
@@ -877,7 +921,9 @@ a:hover {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   text-align: center;
-  transition: border-color var(--transition), transform var(--transition);
+  transition:
+    border-color var(--transition),
+    transform var(--transition);
   color: var(--color-text);
   text-decoration: none;
 }
@@ -1111,5 +1157,4 @@ a:hover {
   #bgCanvas {
     opacity: 0.2;
   }
-
 }
